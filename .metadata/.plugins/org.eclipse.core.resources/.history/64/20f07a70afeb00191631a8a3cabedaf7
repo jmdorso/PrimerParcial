@@ -1,0 +1,87 @@
+/*
+ ============================================================================
+ Name        : DorsoJuanMartin1erParcial.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+#include "cliente.h"
+
+#define ALTA_OK 1
+#define ALTA_DNS 0
+
+int main(void)
+{
+	char seguir = 's';
+	char salir;
+	char confirmarBaja;
+	char confirmarModif;
+	sCliente unClienteAlta;
+	sCliente unClienteBaja;
+	sCliente unClienteModif;
+	sCliente aClientes[CANT_CLIENTES];
+	int opcion;
+	int flagAlta=ALTA_DNS;
+	int auxId;
+	int id;
+
+	initLugarLibreCliente(aClientes,CANT_CLIENTES);
+	imprimirArrayClientes(aClientes,5);
+
+	do{
+		printf("----------------------------------------------------------------------------------\n");
+	    printf("\tPrimer parcial 2019. Empresa de recoleccion || Juan Martin Dorso\n\n");
+	    printf("01. Alta de cliente\n");
+	    printf("02. Modificar datos de cliente\n");
+	    printf("03. Baja de cliente\n");
+	    printf("04. Crear pedido de recoleecion\n");
+	    printf("05. Procesar residuos\n");
+	    printf("06. Imprimir clientes\n");
+	    printf("07. Imprimr pedidos pendientes\n");
+	    printf("08. Imprimir pedidos precoesados\n");
+	    printf("09. Salir\n\n");
+
+	    if(getValidIntFromString(&opcion,"\tIngrese opcion: ","\nError",1,9,CANT_REINTENTOS)==0)
+	    {
+	    	switch(opcion)
+	    	{
+	    	case 1:
+				if(altaUnSoloClientePorUI(&unClienteAlta)==EXIT_SUCCESS)
+				{
+					auxId=altaClientePorId(aClientes,CANT_CLIENTES,unClienteAlta);
+					if(auxId>EXIT_SUCCESS)
+					{
+	    				flagAlta=ALTA_OK;
+	    				printf("\n\nSe ingreso el cliente con ID: # %d\n\n",auxId);
+					}
+				}
+	    		break;
+	    	case 9:
+				getChar(&salir,
+						"\nSeguro desea salir? Ingrese s (o cualquier tecla para continuar): ",
+						"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
+						'a',
+						'z',
+						CANT_REINTENTOS);
+				if(salir == 's' || salir == 'S')
+			     {
+					printf("\n\n\tEl programa se cerrara.");
+			        seguir = 'n';
+			     }
+	    		break;
+
+	    	}
+	    }
+
+	}while(seguir=='s' || seguir=='S');
+
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,35 @@
+21:41:36 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:251:43: warning: format ‘%f’ expects a matching ‘double’ argument [-Wformat=]
+     printf("\nCarga exitosa, le sobran %.2f Kg");
+                                           ^
+../src/pedidos.c:230:8: warning: variable ‘restoResiduo’ set but not used [-Wunused-but-set-variable]
+  float restoResiduo;
+        ^~~~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+
+21:41:36 Build Finished. 0 errors, 5 warnings. (took 315ms)
+

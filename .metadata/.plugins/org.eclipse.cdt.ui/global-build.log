@@ -1,0 +1,1044 @@
+18:54:09 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+18:54:14 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+18:55:57 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/utn.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utn.d" -MT"src/utn.o" -o "src/utn.o" "../src/utn.c"
+Finished building: ../src/utn.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:55:59 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:01:24 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+../src/cliente.c:23:12: warning: ‘generarIdCliente’ defined but not used [-Wunused-function]
+ static int generarIdCliente(void)
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:20:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:31:04 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:33:6: warning: unused variable ‘auxId’ [-Wunused-variable]
+  int auxId;
+      ^~~~~
+../src/DorsoJuanMartin1erParcial.c:32:6: warning: unused variable ‘flagAlta’ [-Wunused-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:31:6: warning: unused variable ‘opcion’ [-Wunused-variable]
+  int opcion;
+      ^~~~~~
+../src/DorsoJuanMartin1erParcial.c:29:11: warning: unused variable ‘unClienteModif’ [-Wunused-variable]
+  sCliente unClienteModif;
+           ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:28:11: warning: unused variable ‘unClienteBaja’ [-Wunused-variable]
+  sCliente unClienteBaja;
+           ^~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:27:11: warning: unused variable ‘unClienteAlta’ [-Wunused-variable]
+  sCliente unClienteAlta;
+           ^~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:26:7: warning: unused variable ‘confirmarModif’ [-Wunused-variable]
+  char confirmarModif;
+       ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:25:7: warning: unused variable ‘confirmarBaja’ [-Wunused-variable]
+  char confirmarBaja;
+       ^~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:24:7: warning: unused variable ‘salir’ [-Wunused-variable]
+  char salir;
+       ^~~~~
+../src/DorsoJuanMartin1erParcial.c:23:7: warning: unused variable ‘seguir’ [-Wunused-variable]
+  char seguir = 's';
+       ^~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:38:49 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:32:6: warning: variable ‘flagAlta’ set but not used [-Wunused-but-set-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:29:11: warning: unused variable ‘unClienteModif’ [-Wunused-variable]
+  sCliente unClienteModif;
+           ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:28:11: warning: unused variable ‘unClienteBaja’ [-Wunused-variable]
+  sCliente unClienteBaja;
+           ^~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:26:7: warning: unused variable ‘confirmarModif’ [-Wunused-variable]
+  char confirmarModif;
+       ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:25:7: warning: unused variable ‘confirmarBaja’ [-Wunused-variable]
+  char confirmarBaja;
+       ^~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:38:51 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:39:04 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:32:6: warning: variable ‘flagAlta’ set but not used [-Wunused-but-set-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:29:11: warning: unused variable ‘unClienteModif’ [-Wunused-variable]
+  sCliente unClienteModif;
+           ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:28:11: warning: unused variable ‘unClienteBaja’ [-Wunused-variable]
+  sCliente unClienteBaja;
+           ^~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:26:7: warning: unused variable ‘confirmarModif’ [-Wunused-variable]
+  char confirmarModif;
+       ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:25:7: warning: unused variable ‘confirmarBaja’ [-Wunused-variable]
+  char confirmarBaja;
+       ^~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:39:05 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:43:55 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:32:6: warning: variable ‘flagAlta’ set but not used [-Wunused-but-set-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:29:11: warning: unused variable ‘unClienteModif’ [-Wunused-variable]
+  sCliente unClienteModif;
+           ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:26:7: warning: unused variable ‘confirmarModif’ [-Wunused-variable]
+  char confirmarModif;
+       ^~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:43:57 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:55:11 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:55:15 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:58:38 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/utn.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utn.d" -MT"src/utn.o" -o "src/utn.o" "../src/utn.c"
+Finished building: ../src/utn.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:58:40 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+19:59:48 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/utn.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utn.d" -MT"src/utn.o" -o "src/utn.o" "../src/utn.c"
+Finished building: ../src/utn.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:59:49 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+20:00:52 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+20:00:56 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+20:02:24 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:34:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/utn.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utn.d" -MT"src/utn.o" -o "src/utn.o" "../src/utn.c"
+Finished building: ../src/utn.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+20:02:26 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+20:10:46 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c:31:27: error: unknown type name ‘sPedido’
+ int initLugarLibrePedidos(sPedido *aArray, int cantidad)
+                           ^~~~~~~
+../src/pedidos.c:16:12: warning: ‘generarIdPedido’ defined but not used [-Wunused-function]
+ static int generarIdPedido(void)
+            ^~~~~~~~~~~~~~~
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/pedidos.o'
+make: *** [src/pedidos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:11:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:32:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+In file included from ../src/pedidos.c:13:0:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+../src/pedidos.c:23:12: warning: ‘generarIdPedido’ defined but not used [-Wunused-function]
+ static int generarIdPedido(void)
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+20:33:32 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:35:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaPedidoPorId’:
+../src/pedidos.c:69:14: warning: implicit declaration of function ‘buscarLugarLibrePedido’ [-Wimplicit-function-declaration]
+   posArray = buscarLugarLibrePedido(aArray,cantidad);
+              ^~~~~~~~~~~~~~~~~~~~~~
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+./src/pedidos.o: En la función `altaPedidoPorId':
+/home/alumno/Documentos/GIT/DorsoJuanMartin1erParcial/Debug/../src/pedidos.c:69: referencia a `buscarLugarLibrePedido' sin definir
+makefile:30: fallo en las instrucciones para el objetivo 'DorsoJuanMartin1erParcial'
+collect2: error: ld returned 1 exit status
+make: *** [DorsoJuanMartin1erParcial] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:34:01 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:35:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaPedidoPorId’:
+../src/pedidos.c:69:14: warning: implicit declaration of function ‘buscarLugarLibrePedido’ [-Wimplicit-function-declaration]
+   posArray = buscarLugarLibrePedido(aArray,cantidad);
+              ^~~~~~~~~~~~~~~~~~~~~~
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+20:40:18 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:35:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaPedidoPorId’:
+../src/pedidos.c:69:14: warning: implicit declaration of function ‘buscarLugarLibrePedido’ [-Wimplicit-function-declaration]
+   posArray = buscarLugarLibrePedido(aArray,cantidad);
+              ^~~~~~~~~~~~~~~~~~~~~~
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+20:46:36 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:194:57: error: ‘pedido’ undeclared (first use in this function)
+   if(posArray >= 0 && buscarPedidoPorId(aArray,cantidad,pedido.id) == -1)
+                                                         ^~~~~~
+../src/pedidos.c:194:57: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/pedidos.o'
+make: *** [src/pedidos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:00 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:193:41: warning: excess elements in array initializer
+  char tipoPedido[1][25] = {"Completado","Pendiente"};
+                                         ^~~~~~~~~~~
+../src/pedidos.c:193:41: note: (near initialization for ‘tipoPedido’)
+../src/pedidos.c:191:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:227:3: error: unknown type name ‘imprimirPedidosStatusOk’
+   imprimirPedidosStatusOk
+   ^~~~~~~~~~~~~~~~~~~~~~~
+../src/pedidos.c:229:57: error: ‘pedido’ undeclared (first use in this function)
+   if(posArray >= 0 && buscarPedidoPorId(aArray,cantidad,pedido.id) == -1)
+                                                         ^~~~~~
+../src/pedidos.c:229:57: note: each undeclared identifier is reported only once for each function it appears in
+../src/pedidos.c:223:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/pedidos.o'
+      ^~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+make: *** [src/pedidos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:16 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:149:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:193:41: warning: excess elements in array initializer
+  char tipoPedido[1][25] = {"Completado","Pendiente"};
+                                         ^~~~~~~~~~~
+../src/pedidos.c:193:41: note: (near initialization for ‘tipoPedido’)
+../src/pedidos.c:191:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:07:47 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:146:8: error: too few arguments to function ‘altaUnSoloPedidoPorUI’
+     if(altaUnSoloPedidoPorUI(&unPedidoAlta)==EXIT_SUCCESS)
+        ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:40:5: note: declared here
+ int altaUnSoloPedidoPorUI(sPedido *pedido,sCliente *aCliente,int cantCliente);
+     ^~~~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:38:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:33:10: warning: unused variable ‘unPedidoModif’ [-Wunused-variable]
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/DorsoJuanMartin1erParcial.o'
+  sPedido unPedidoModif;
+          ^~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+make: *** [src/DorsoJuanMartin1erParcial.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:08:36 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:38:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:33:10: warning: unused variable ‘unPedidoModif’ [-Wunused-variable]
+  sPedido unPedidoModif;
+          ^~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:08:38 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:11:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:194:41: warning: excess elements in array initializer
+  char tipoPedido[1][25] = {"Completado","Pendiente"};
+                                         ^~~~~~~~~~~
+../src/pedidos.c:194:41: note: (near initialization for ‘tipoPedido’)
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:11:30 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:14:08 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:14:10 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:30:38 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:38:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:33:10: warning: unused variable ‘unPedidoModif’ [-Wunused-variable]
+  sPedido unPedidoModif;
+          ^~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+In file included from ../src/cliente.c:15:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:251:43: warning: format ‘%f’ expects a matching ‘double’ argument [-Wformat=]
+     printf("\nCarga exitosa, le sobran %.2f Kg")
+                                           ^
+../src/pedidos.c:252:4: error: expected ‘;’ before ‘}’ token
+    }
+    ^
+../src/pedidos.c:255:12: warning: implicit declaration of function ‘Printf’ [-Wimplicit-function-declaration]
+     printf(Printf("\nError, sobrepaso el total de KG");
+            ^~~~~~
+../src/pedidos.c:255:55: error: expected ‘)’ before ‘;’ token
+     printf(Printf("\nError, sobrepaso el total de KG");
+                                                       ^
+../src/pedidos.c:255:12: warning: passing argument 1 of ‘printf’ makes pointer from integer without a cast [-Wint-conversion]
+     printf(Printf("\nError, sobrepaso el total de KG");
+            ^~~~~~
+In file included from ../src/pedidos.c:8:0:
+/usr/include/stdio.h:364:12: note: expected ‘const char * restrict’ but argument is of type ‘int’
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/pedidos.o'
+ extern int printf (const char *__restrict __format, ...);
+            ^~~~~~
+../src/pedidos.c:256:4: error: expected ‘;’ before ‘}’ token
+    }
+    ^
+../src/pedidos.c:230:8: warning: variable ‘restoResiduo’ set but not used [-Wunused-but-set-variable]
+  float restoResiduo;
+        ^~~~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+make: *** [src/pedidos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:30:51 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:251:43: warning: format ‘%f’ expects a matching ‘double’ argument [-Wformat=]
+     printf("\nCarga exitosa, le sobran %.2f Kg");
+                                           ^
+../src/pedidos.c:255:12: warning: implicit declaration of function ‘Printf’ [-Wimplicit-function-declaration]
+     printf(Printf("\nError, sobrepaso el total de KG");
+            ^~~~~~
+../src/pedidos.c:255:55: error: expected ‘)’ before ‘;’ token
+     printf(Printf("\nError, sobrepaso el total de KG");
+                                                       ^
+../src/pedidos.c:255:12: warning: passing argument 1 of ‘printf’ makes pointer from integer without a cast [-Wint-conversion]
+     printf(Printf("\nError, sobrepaso el total de KG");
+            ^~~~~~
+In file included from ../src/pedidos.c:8:0:
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/pedidos.o'
+/usr/include/stdio.h:364:12: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern int printf (const char *__restrict __format, ...);
+            ^~~~~~
+../src/pedidos.c:256:4: error: expected ‘;’ before ‘}’ token
+    }
+    ^
+../src/pedidos.c:230:8: warning: variable ‘restoResiduo’ set but not used [-Wunused-but-set-variable]
+  float restoResiduo;
+        ^~~~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+make: *** [src/pedidos.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:31:35 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:251:43: warning: format ‘%f’ expects a matching ‘double’ argument [-Wformat=]
+     printf("\nCarga exitosa, le sobran %.2f Kg");
+                                           ^
+../src/pedidos.c:230:8: warning: variable ‘restoResiduo’ set but not used [-Wunused-but-set-variable]
+  float restoResiduo;
+        ^~~~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:36:39 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:162:34: warning: passing argument 1 of ‘imprimirArrayPedidosStatusOk’ from incompatible pointer type [-Wincompatible-pointer-types]
+     imprimirArrayPedidosStatusOk(aClientes,CANT_CLIENTES);
+                                  ^~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:41:5: note: expected ‘sPedido * {aka struct <anonymous> *}’ but argument is of type ‘sCliente * {aka struct <anonymous> *}’
+ int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:162:5: error: too few arguments to function ‘imprimirArrayPedidosStatusOk’
+     imprimirArrayPedidosStatusOk(aClientes,CANT_CLIENTES);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: fallo en las instrucciones para el objetivo 'src/DorsoJuanMartin1erParcial.o'
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:41:5: note: declared here
+ int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:178:10: warning: implicit declaration of function ‘modificaPedidoPorId’ [-Wimplicit-function-declaration]
+       if(modificaPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoModif.id)==EXIT_SUCCESS)
+          ^~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:39:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+make: *** [src/DorsoJuanMartin1erParcial.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:37:13 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:178:10: warning: implicit declaration of function ‘modificaPedidoPorId’ [-Wimplicit-function-declaration]
+       if(modificaPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoModif.id)==EXIT_SUCCESS)
+          ^~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:39:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+./src/DorsoJuanMartin1erParcial.o: En la función `main':
+/home/alumno/Documentos/GIT/DorsoJuanMartin1erParcial/Debug/../src/DorsoJuanMartin1erParcial.c:178: referencia a `modificaPedidoPorId' sin definir
+collect2: error: ld returned 1 exit status
+makefile:30: fallo en las instrucciones para el objetivo 'DorsoJuanMartin1erParcial'
+make: *** [DorsoJuanMartin1erParcial] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:38:57 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+./src/DorsoJuanMartin1erParcial.o: En la función `main':
+/home/alumno/Documentos/GIT/DorsoJuanMartin1erParcial/Debug/../src/DorsoJuanMartin1erParcial.c:178: referencia a `modificaPedidoPorId' sin definir
+makefile:30: fallo en las instrucciones para el objetivo 'DorsoJuanMartin1erParcial'
+collect2: error: ld returned 1 exit status
+make: *** [DorsoJuanMartin1erParcial] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:39:27 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:39:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:39:29 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:40:19 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:39:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:40:21 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:41:36 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+../src/pedidos.c: In function ‘procesarResiduosPorID’:
+../src/pedidos.c:251:43: warning: format ‘%f’ expects a matching ‘double’ argument [-Wformat=]
+     printf("\nCarga exitosa, le sobran %.2f Kg");
+                                           ^
+../src/pedidos.c:230:8: warning: variable ‘restoResiduo’ set but not used [-Wunused-but-set-variable]
+  float restoResiduo;
+        ^~~~~~~~~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 

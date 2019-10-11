@@ -1,0 +1,40 @@
+/*
+ ============================================================================
+ Name        : DorsoJuanMartin1erParcial.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+#include "cliente.h"
+
+#define ALTA_OK 1
+#define ALTA_DNS 0
+
+int main(void)
+{
+	char seguir = 's';
+	char salir;
+	char confirmarBaja;
+	char confirmarModif;
+	sCliente unClienteAlta;
+	sCliente unClienteBaja;
+	sCliente unClienteModif;
+	sCliente aClientes[CANT_CLIENTES];
+	int opcion;
+	int flagAlta=ALTA_DNS;
+	int auxId;
+	int id;
+
+	initLugarLibreCliente(aClientes,CANT_CLIENTES);
+
+
+	return EXIT_SUCCESS;
+}

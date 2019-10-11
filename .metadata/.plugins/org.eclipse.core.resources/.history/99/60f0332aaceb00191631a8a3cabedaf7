@@ -1,0 +1,29 @@
+/*
+ * cliente.c
+ *
+ *  Created on: 10 oct. 2019
+ *      Author: alumno
+ */
+
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+#include "cliente.h"
+
+/** \brief va generando un ID secuencial cada vez que es llamada
+ * \param void, no recibe ningun paramentro.
+ * \return el id incrementado cada vez que es llamada(debido a que esta declarada como static
+ * no pierde el valor anterior)
+ *
+ */
+
+static int generarIdCliente(void)
+{
+	static int idIncremental=0;
+	idIncremental++;
+
+	return idIncremental;
+}

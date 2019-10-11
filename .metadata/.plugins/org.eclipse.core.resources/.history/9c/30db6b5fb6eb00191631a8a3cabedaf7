@@ -1,0 +1,36 @@
+/*
+ * pedidos.h
+ *
+ *  Created on: 10 oct. 2019
+ *      Author: alumno
+ */
+
+#ifndef PEDIDOS_H_
+#define PEDIDOS_H_
+
+#define STATUS_EMPTY 0
+#define STATUS_NOT_EMPTY 1
+#define CANT_CARACTERES 51
+#define CANT_REINTENTOS 2
+#define CANT_PEDIDOS 1000
+
+typedef struct
+{
+	int id;
+	int status;
+	//***************
+	int idCliente;
+	int cantKg;
+	int estado;
+	int tipo;
+	int cantKgHDPE;
+	int cantKgLDPE;
+	int cantKgPP;
+
+}sPedido;
+
+static int generarIdPedido(void);
+
+int initLugarLibrePedidos(sPedido *aArray, int cantidad);
+
+#endif /* PEDIDOS_H_ */
