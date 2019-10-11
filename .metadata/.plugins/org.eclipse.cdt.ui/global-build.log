@@ -1042,3 +1042,189 @@ Invoking: GCC C Linker
 gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
 Finished building target: DorsoJuanMartin1erParcial
  
+21:46:08 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:39:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:0:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:0:
+../src/pedidos.h:34:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:46:09 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:49:27 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:49:32 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:52:02 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:52:27 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:52:29 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:56:35 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:56:36 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+21:58:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+../src/pedidos.c: In function ‘altaUnSoloPedidoPorUI’:
+../src/pedidos.c:150:6: warning: unused variable ‘bufferEdad’ [-Wunused-variable]
+  int bufferEdad;
+      ^~~~~~~~~~
+../src/pedidos.c: In function ‘imprimirArrayPedidosStatusOk’:
+../src/pedidos.c:192:6: warning: variable ‘auxId’ set but not used [-Wunused-but-set-variable]
+  int auxId;
+      ^~~~~
+In file included from ../src/pedidos.c:13:0:
+../src/pedidos.c: At top level:
+../src/cliente.h:30:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+21:58:38 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.
+22:01:38 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: No se hace nada para 'all'.

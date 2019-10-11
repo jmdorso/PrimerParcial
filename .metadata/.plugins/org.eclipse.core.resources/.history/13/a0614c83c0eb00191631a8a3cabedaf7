@@ -97,7 +97,7 @@ int main(void)
 						}
 						else
 						{
-							printf("\nERROR EN MODIFICACION\n\n");
+							printf("\nERROR EN BAJA\n\n");
 						}
 					}
 				}
@@ -181,7 +181,7 @@ int main(void)
 						}
 						else
 						{
-							printf("\nERROR EN MODIFICACION\n\n");
+							printf("\nERROR EN BAJA\n\n");
 						}
 					}
 				}

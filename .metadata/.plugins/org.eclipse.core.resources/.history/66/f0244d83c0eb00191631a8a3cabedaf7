@@ -223,9 +223,9 @@ int procesarResiduosPorID(sPedido *aArray,int cantidad,int id)
 {
 	int retorno = EXIT_ERROR;
 	int posArray;
-	float bufferHdpe;
-	float bufferLdpe;
-	float bufferPp;
+	float bufferHDPE;
+	float bufferLDPE;
+	float bufferPP;
 	float sumaKg;
 	float restoResiduo;
 	sPedido auxPedido;
@@ -236,36 +236,26 @@ int procesarResiduosPorID(sPedido *aArray,int cantidad,int id)
 		if(posArray != -1)
 		{
 			auxPedido = aArray[posArray];
-			if(auxPedido.estado != ESTADO_COMPLETADO)
+			printf("\n\nClasificacion de residuos: Ingrese KG de cada tipo (no sobrepasar el total [%.2f Kg]",auxPedido.cantKg);
+			getValidFloatFromString(&bufferHDPE,"\nIngrese cant. KG de residuos HDPE: \n",
+					"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
+			getValidFloatFromString(&bufferLDPE,"\nIngrese cant. KG de residuos LDPE: \n",
+								"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
+			getValidFloatFromString(&bufferPP,"\nIngrese cant. KG de residuos PP: \n",
+								"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
+			sumaKg = bufferHDPE+bufferLDPE+bufferPP;
+			if(sumaKg <= auxPedido.cantKg)
 			{
-				printf("\n\nClasificacion de residuos: Ingrese KG de cada tipo (no sobrepasar el total [%.2f Kg]\n\n",auxPedido.cantKg);
-				getValidFloatFromString(&bufferHdpe,"Ingrese cant. KG de residuos HDPE: \n",
-						"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
-				getValidFloatFromString(&bufferLdpe,"Ingrese cant. KG de residuos LDPE: \n",
-									"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
-				getValidFloatFromString(&bufferPp,"Ingrese cant. KG de residuos PP: \n",
-									"\nError!",0,CANT_MAX_KG,CANT_REINTENTOS);
-				sumaKg = bufferHdpe+bufferLdpe+bufferPp;
-				if(sumaKg <= auxPedido.cantKg)
-				{
-					auxPedido.cantKgHDPE = bufferHdpe;
-					auxPedido.cantKgLDPE = bufferLdpe;
-					auxPedido.cantKgPP = bufferPp;
-					auxPedido.estado = ESTADO_COMPLETADO;
-					aArray[posArray]=auxPedido;
-					restoResiduo = auxPedido.cantKg - sumaKg;
-					printf("\n\nCarga exitosa, le sobran %.2f Kg",restoResiduo);
-					retorno=EXIT_SUCCESS;
-				}
-				else if(sumaKg > auxPedido.cantKg)
-				{
-					printf("\nError, sobrepaso el total de KG");
-				}
+				aArray[posArray]=auxPedido;
+				restoResiduo = auxPedido.cantKg - sumaKg;
+				printf("\nCarga exitosa, le sobran %.2f Kg");
 			}
-			else
+			else if(sumaKg > auxPedido.cantKg)
 			{
-				printf("\n\nEl pedido ya se encuentra completado\n\n");
+				printf("\nError, sobrepaso el total de KG");
 			}
+
+
 		}
 	}
 	return retorno;

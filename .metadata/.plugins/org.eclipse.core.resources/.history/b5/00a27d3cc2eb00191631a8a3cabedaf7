@@ -262,10 +262,6 @@ int procesarResiduosPorID(sPedido *aArray,int cantidad,int id)
 					printf("\nError, sobrepaso el total de KG");
 				}
 			}
-			else
-			{
-				printf("\n\nEl pedido ya se encuentra completado\n\n");
-			}
 		}
 	}
 	return retorno;
