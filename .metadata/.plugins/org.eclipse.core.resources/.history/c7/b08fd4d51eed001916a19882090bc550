@@ -325,10 +325,10 @@ int imprimirArrayPedidosStatusOkyCompletados(sPedido *aArray, int cantidad,sClie
 	{
 		retorno = EXIT_SUCCESS;
 		printf("\n-----------------------------LISTA DE PEDIDOS PENDIENTES--------------------------------\n");
-		printf("%15s | %15s | %10s | %10s | %10s | %15s\n","CUIT","DIRECCION","KG HDPE","KG LDPE","KG PP","ESTADO");
+		printf("%15s | %15s | %10s | %15s\n","CUIT","DIRECCION","KG HDPE","KG LDPE","KG PP","ESTADO");
 		for(i=0;i<cantidad;i++)
 		{
-			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_COMPLETADO)
+			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_PENDIENTE)
 			{
 				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
 				printf("%15s | %15s | %10.2f | %10.2f | %10.2f | %15s\n",

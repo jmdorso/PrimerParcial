@@ -194,10 +194,8 @@ int main(void)
 	    	case 6:
 	    		break;
 	    	case 7:
-	    		imprimirArrayPedidosStatusOkyPendientes(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 8:
-	    		imprimirArrayPedidosStatusOkyCompletados(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 9:
 				getChar(&salir,
