@@ -337,14 +337,10 @@ int imprimirArrayPedidosStatusOkyCompletados(sPedido *aArray, int cantidad,sClie
 	return retorno;
 }
 
-/** \brief cuenta e imprime los pedidos en estado pendiente de cada cliente
+/** \brief carga datos de prueba en el array
  * \param *aArray es el array de clientes
- * \param cantidad es la cantidad de elementos del array de clientes
- * \param *aPedido es el array de Pedidos
- * \param cantPedido es la cantidad de elementos del array de pedidos
- * \param *aContCliente es el array auxiliar de contadores de pedidos de cada cliente
- * \param cantContCliente es la cantidad de elementos del array auxiliar
- * \return -1 si hay algun error o 0 si esta bien
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
  *
  */
 

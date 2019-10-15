@@ -4250,3 +4250,79 @@ Finished building target: DorsoJuanMartin1erParcial
 21:30:44 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
 make all 
 make: Nothing to be done for 'all'.
+22:26:17 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:37:6: warning: unused variable ‘flagAlta’ [-Wunused-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:36:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:
+../src/pedidos.h:45:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+22:26:21 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+22:41:20 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+In file included from ../src/pedidos.h:21,
+                 from ../src/pedidos.c:8:
+../src/cliente.h:36:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+22:43:51 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘id’ [-Wunused-variable]
+  int id;
+      ^~
+../src/DorsoJuanMartin1erParcial.c:37:6: warning: unused variable ‘flagAlta’ [-Wunused-variable]
+  int flagAlta=ALTA_DNS;
+      ^~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:16:
+../src/DorsoJuanMartin1erParcial.c: At top level:
+../src/cliente.h:36:12: warning: ‘generarIdCliente’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdCliente(void);
+            ^~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:17:
+../src/pedidos.h:45:12: warning: ‘generarIdPedido’ declared ‘static’ but never defined [-Wunused-function]
+ static int generarIdPedido(void);
+            ^~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 

@@ -58,7 +58,7 @@ int main(void)
 	    printf("08. Imprimir pedidos precoesados\n");
 	    printf("09. Salir\n\n");
 
-	    if(getValidIntFromString(&opcion,"\tIngrese opción: ","\nError",1,9,CANT_REINTENTOS)==0)
+	    if(getValidIntFromString(&opcion,"\tIngrese opcion: ","\nError",1,9,CANT_REINTENTOS)==0)
 	    {
 	    	switch(opcion)
 	    	{
@@ -125,7 +125,7 @@ int main(void)
 					printf("Quiere Eliminar el siguiente Cliente: \n");
 					printf("Nombre: %s - CUIT: %s - ID: %d",aClientes[auxId].nombre,aClientes[auxId].cuit,aClientes[auxId].id);
 					getChar(&confirmarBaja,
-							"\nSeguro desea dar de baja? Ingrese s (o cualquier tecla para cancelar baja): ",
+							"\nSeguro desea dar de baja? Ingrese s (o cualquier tecla para continuar): ",
 							"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
 							'a',
 							'z',

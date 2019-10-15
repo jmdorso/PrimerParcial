@@ -58,7 +58,7 @@ int main(void)
 	    printf("08. Imprimir pedidos precoesados\n");
 	    printf("09. Salir\n\n");
 
-	    if(getValidIntFromString(&opcion,"\tIngrese opción: ","\nError",1,9,CANT_REINTENTOS)==0)
+	    if(getValidIntFromString(&opcion,"\tIngrese opcion: ","\nError",1,9,CANT_REINTENTOS)==0)
 	    {
 	    	switch(opcion)
 	    	{
