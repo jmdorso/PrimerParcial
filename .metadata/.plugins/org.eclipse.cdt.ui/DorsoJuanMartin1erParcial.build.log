@@ -1,6 +1,6 @@
-15:34:21 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+21:30:44 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
 make all 
 make: Nothing to be done for 'all'.
 
-15:34:22 Build Finished. 0 errors, 0 warnings. (took 783ms)
+21:30:44 Build Finished. 0 errors, 0 warnings. (took 779ms)
 

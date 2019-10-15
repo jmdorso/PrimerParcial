@@ -5,14 +5,14 @@
  *      Author: alumno
  */
 
+#include "cliente.h"
 
 #include <stdio.h>
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
-#include "cliente.h"
-#include "pedidos.h"
+
 
 /** \brief va generando un ID secuencial cada vez que es llamada
  * \param void, no recibe ningun paramentro.
@@ -141,34 +141,48 @@ int buscarClientePorId(sCliente *aArray, int cantidad,int id)
  *
  */
 
-int altaUnSoloClientePorUI(sCliente *cliente)
+int altaUnSoloClientePorUI(sCliente *cliente,sCliente *aArray,int cantidad)
 {
 	int retorno = EXIT_ERROR;
+	int i;
 	char bufferNombre[CANT_CARACTERES];
 	char bufferCuit[CANT_CARACTERES];
 	char bufferDireccion[CANT_CARACTERES];
 	char bufferLocalidad[CANT_CARACTERES];
 
 	getString(bufferNombre,"\nIngrese Nombre: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
-	retorno = esNombreOApellido(bufferNombre,"No es un nombre valido");
+	retorno = esNombreOApellido(bufferNombre,"No es un nombre valido\n");
 	if(retorno == EXIT_SUCCESS)
 	{
 		getString(bufferCuit,"\nIngrese CUIT(sin espacios, guiones o puntos): ","\nError",1,CANT_CARACTERES_CUIT,CANT_REINTENTOS);
-		retorno = esSoloNumeros(bufferCuit,"No es un CUIT Valido");
+		retorno = esSoloNumerosPositivos(bufferCuit,"No es un CUIT Valido\n");
 		if(retorno == EXIT_SUCCESS)
 		{
-			getString(bufferLocalidad,"\nIngrese Localidad: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
-			retorno = esAlfaNumerico(bufferLocalidad,"No es una localidad valida");
+			for(i=0;i<cantidad;i++)
+			{
+				if(strncmp(bufferCuit,aArray[i].cuit,CANT_CARACTERES_CUIT)==0)
+				{
+					printf("\nCuit ya ingresado. Volver a cargar datos.\n");
+					retorno = EXIT_ERROR;
+					break;
+				}
+			}
 			if(retorno == EXIT_SUCCESS)
 			{
-				getString(bufferDireccion,"\nIngrese Direccion: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
-				retorno = esAlfaNumerico(bufferDireccion,"No es una direccion valida");
+				getString(bufferLocalidad,"\nIngrese Localidad: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+				retorno = esAlfaNumerico(bufferLocalidad,"No es una localidad valida\n");
 				if(retorno == EXIT_SUCCESS)
 				{
-					strncpy(cliente->nombre,bufferNombre,CANT_CARACTERES);
-					strncpy(cliente->cuit,bufferCuit,CANT_CARACTERES_CUIT);
-					strncpy(cliente->localidad,bufferLocalidad,CANT_CARACTERES);
-					strncpy(cliente->direccion,bufferDireccion,CANT_CARACTERES);
+					getString(bufferDireccion,"\nIngrese Direccion: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+					retorno = esAlfaNumerico(bufferDireccion,"No es una direccion valida\n");
+					if(retorno == EXIT_SUCCESS)
+					{
+						strncpy(cliente->nombre,bufferNombre,CANT_CARACTERES);
+						strncpy(cliente->cuit,bufferCuit,CANT_CARACTERES_CUIT);
+						strncpy(cliente->localidad,bufferLocalidad,CANT_CARACTERES);
+						strncpy(cliente->direccion,bufferDireccion,CANT_CARACTERES);
+					}
+
 				}
 
 			}
@@ -218,7 +232,7 @@ int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad)
 	if(aArray != NULL && cantidad>0)
 	{
 		retorno = EXIT_SUCCESS;
-		printf("\n--------------------------------LISTA DE ORQUESTAS--------------------------------\n");
+		printf("\n--------------------------------LISTA DE CLIENTES--------------------------------\n");
 		printf("%3s | %15s | %15s | %15s | %15s\n","ID","NOMBRE","CUIT","LOCALIDAD","DIRECCION");
 		for(i=0;i<cantidad;i++)
 		{
@@ -307,5 +321,35 @@ int modificaClientePorId(sCliente *aArray,int cantidad,int id)
 	}
 	return retorno;
 }
+
+
+/** \brief carga datos de prueba en el array
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
+ *
+ */
+
+void altaForzadaCliente(sCliente *aArray,int cantidad)
+{
+	sCliente aux[5];
+	char nombre[][CANT_CARACTERES] = {"Dapsa","Petrobras","Shell","YPF","Axion"};
+	char cuit[][CANT_CARACTERES_CUIT] = {"1234","1241241","123931","99313","913841"};
+	char direccion[][CANT_CARACTERES] = {"Sgto Ponce 129","Sgto Ponce 75","Sgto Ponce 23","1 y 25","Castelli"};
+	char localidad[][CANT_CARACTERES]= {"Dock Sud","Dock Sud","Dock Sud","La Plata","Avellaneda"};
+	int i;
+
+	for(i=0;i<5;i++)
+	{
+		strncpy(aux[i].nombre,nombre[i],CANT_CARACTERES);
+		strncpy(aux[i].cuit,cuit[i],CANT_CARACTERES_CUIT);
+		strncpy(aux[i].direccion,direccion[i],CANT_CARACTERES);
+		strncpy(aux[i].localidad,localidad[i],CANT_CARACTERES);
+		altaClientePorId(aArray,cantidad,aux[i]);
+	}
+}
+
+
+
 
 

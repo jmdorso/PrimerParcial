@@ -1,0 +1,16 @@
+/*
+ * auxContador.c
+ *
+ *  Created on: Oct 14, 2019
+ *      Author: mati
+ */
+
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+#include "cliente.h"
+#include "auxContador.h"
+#include "pedidos.h"

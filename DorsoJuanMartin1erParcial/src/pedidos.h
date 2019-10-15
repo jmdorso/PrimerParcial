@@ -17,6 +17,9 @@
 #define ESTADO_COMPLETADO 1
 #define ESTADO_PENDIENTE 2
 
+#include "utn.h"
+#include "cliente.h"
+
 typedef struct
 {
 	int id;
@@ -31,6 +34,14 @@ typedef struct
 
 }sPedido;
 
+struct
+{
+	int status;
+	//***************
+	int idCliente;
+	int contPedidos;
+}typedef auxContCliente;
+
 static int generarIdPedido(void);
 
 int initLugarLibrePedido(sPedido *aArray, int cantidad);
@@ -42,6 +53,9 @@ int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aClient
 int procesarResiduosPorID(sPedido *aArray,int cantidad,int id);
 int imprimirArrayPedidosStatusOkyPendientes(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 int imprimirArrayPedidosStatusOkyCompletados(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
-
+int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
+										sPedido *aPedido,int cantPedido,
+										auxContCliente *aContCliente,int cantContCliente);
 
 #endif /* PEDIDOS_H_ */
+

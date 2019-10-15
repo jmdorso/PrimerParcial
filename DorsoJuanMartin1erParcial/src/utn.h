@@ -40,6 +40,7 @@ int getChar(	char *pResultado,
 
 int esNombreOApellido(char *pResultado,char *pMensajeError);
 int esSoloNumeros(char *pResultado,char *pMensajeError);
+int esSoloNumerosPositivos(char *pResultado,char *pMensajeError);
 int esSoloNumerosFlotantes(char *pResultado,char *pMensajeError);
 int esAlfaNumerico(char *pResultado,char *pMensajeError);
 

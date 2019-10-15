@@ -5,8 +5,11 @@
  *      Author: alumno
  */
 
+
+
 #ifndef CLIENTE_H_
 #define CLIENTE_H_
+
 
 #define STATUS_EMPTY 0
 #define STATUS_NOT_EMPTY 1
@@ -14,6 +17,8 @@
 #define CANT_CARACTERES_CUIT 10
 #define CANT_REINTENTOS 2
 #define CANT_CLIENTES 100
+
+#include "utn.h"
 
 typedef struct
 {
@@ -27,16 +32,19 @@ typedef struct
 
 }sCliente;
 
+
 static int generarIdCliente(void);
 
 int initLugarLibreCliente(sCliente *aArray, int cantidad);
 int altaClientePorId(sCliente *aArray, int cantidad,sCliente cliente);
 int buscarLugarLibreCliente(sCliente *aArray, int cantidad);
 int buscarClientePorId(sCliente *aArray, int cantidad,int id);
-int altaUnSoloClientePorUI(sCliente *cliente);
+int altaUnSoloClientePorUI(sCliente *cliente,sCliente *aArray,int cantidad);
 int imprimirArrayClientes(sCliente *aArray, int cantidad);
 int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad);
 int bajaClientePorId(sCliente *aArray, int cantidad,int id);
 int modificaClientePorId(sCliente *aArray,int cantidad,int id);
+void altaForzadaCliente(sCliente *aArray,int cantidad);
 
 #endif /* CLIENTE_H_ */
+

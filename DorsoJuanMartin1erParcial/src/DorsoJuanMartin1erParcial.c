@@ -32,14 +32,18 @@ int main(void)
 	sPedido unPedidoAlta;
 	sPedido unPedidoModif;
 	sPedido aPedidos[CANT_PEDIDOS];
+	auxContCliente aContCliente[CANT_CLIENTES];
 	int opcion;
 	int flagAlta=ALTA_DNS;
 	int flagAltaPedido=ALTA_DNS;
 	int auxId;
 	int id;
+	int contClientes = 5;
 
 	initLugarLibreCliente(aClientes,CANT_CLIENTES);
-	imprimirArrayClientes(aClientes,5);
+	initLugarLibrePedido(aPedidos,CANT_PEDIDOS);
+	altaForzadaCliente(aClientes,CANT_CLIENTES);
+	imprimirArrayClientesStatusOk(aClientes,CANT_CLIENTES);
 
 	do{
 		printf("----------------------------------------------------------------------------------\n");
@@ -59,18 +63,18 @@ int main(void)
 	    	switch(opcion)
 	    	{
 	    	case 1:
-				if(altaUnSoloClientePorUI(&unClienteAlta)==EXIT_SUCCESS)
+				if(altaUnSoloClientePorUI(&unClienteAlta,aClientes,CANT_CLIENTES)==EXIT_SUCCESS)
 				{
 					auxId=altaClientePorId(aClientes,CANT_CLIENTES,unClienteAlta);
 					if(auxId>EXIT_SUCCESS)
 					{
-	    				flagAlta=ALTA_OK;
+	    				contClientes++;
 	    				printf("\n\nSe ingreso el cliente con ID: # %d\n\n",auxId);
 					}
 				}
 	    		break;
 	    	case 2:
-				if(flagAlta == ALTA_DNS)
+				if(contClientes == 0)
 				{
 					printf("\nERROR. Falta ingresar al menos un cliente.\n\n");
 					break;
@@ -84,7 +88,7 @@ int main(void)
 					printf("Quiere Modificar el siguiente Cliente: \n");
 					printf("Nombre: %s - CUIT: %s - ID: %d",aClientes[auxId].nombre,aClientes[auxId].cuit,aClientes[auxId].id);
 					getChar(&confirmarModif,
-							"\nSeguro desea modificar? Ingrese s (o cualquier tecla para continuar): ",
+							"\nSeguro desea modificar? Ingrese s (o cualquier tecla para cancelar modificación): ",
 							"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
 							'a',
 							'z',
@@ -107,7 +111,7 @@ int main(void)
 				}
 				break;
 	    	case 3:
-				if(flagAlta == ALTA_DNS)
+				if(contClientes == 0)
 				{
 					printf("\nERROR. Falta ingresar al menos un cliente.\n\n");
 					break;
@@ -130,6 +134,7 @@ int main(void)
 					{
 						if(bajaClientePorId(aClientes,CANT_CLIENTES,unClienteBaja.id)==EXIT_SUCCESS)
 						{
+							contClientes--;
 							printf("\nBAJA EXITOSA\n\n");
 						}
 						else
@@ -192,6 +197,7 @@ int main(void)
 	    		imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 6:
+	    		contadorDePedidosPendientePorCliente(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContCliente,CANT_CLIENTES);
 	    		break;
 	    	case 7:
 	    		imprimirArrayPedidosStatusOkyPendientes(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);

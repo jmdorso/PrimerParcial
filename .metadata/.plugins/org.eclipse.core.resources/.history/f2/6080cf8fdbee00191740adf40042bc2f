@@ -1,0 +1,19 @@
+/*
+ * auxContador.h
+ *
+ *  Created on: Oct 14, 2019
+ *      Author: mati
+ */
+
+#ifndef AUXCONTADOR_H_
+#define AUXCONTADOR_H_
+
+typedef struct
+{
+	int status;
+	//***************
+	int idCliente;
+	int contPedidos;
+}auxContCliente;
+
+#endif /* AUXCONTADOR_H_ */

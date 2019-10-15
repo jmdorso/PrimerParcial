@@ -1,0 +1,378 @@
+/*
+ * cliente.c
+ *
+ *  Created on: 10 oct. 2019
+ *      Author: alumno
+ */
+
+
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+#include "pedidos.h"
+#include "cliente.h"
+
+
+/** \brief va generando un ID secuencial cada vez que es llamada
+ * \param void, no recibe ningun paramentro.
+ * \return el id incrementado cada vez que es llamada(debido a que esta declarada como static
+ * no pierde el valor anterior)
+ *
+ */
+
+static int generarIdCliente(void)
+{
+	static int idIncremental=0;
+	idIncremental++;
+
+	return idIncremental;
+}
+
+/** \brief Inicializa un array de clientes con el estado libre(es decir, un array vacio y listo para cargar)
+ * \param *aArray es el array a inicializar
+ * \param cantidad es la cantidad de elementos del array
+ * \return -1 si hay algun error o 0 si esta bien.
+ *
+ */
+
+int initLugarLibreCliente(sCliente *aArray, int cantidad)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+
+	if(aArray != NULL && cantidad >0)
+	{
+		for(i=0;i<cantidad;i++)
+		{
+			aArray[i].status = STATUS_EMPTY;
+		}
+	retorno = EXIT_SUCCESS;
+	}
+	return retorno;
+}
+
+/** \brief Da de alta un cliente (previamente cargado) en el array (en la primer posicion libre que encuentra)
+ * \param *aArray es el array en el que se dara de alta
+ * \param cantidad es la cantidad de elementos del array
+ * \param cliente es una variable con los datos del cliente a dar de alta dentro del array
+ * \return -1 si hay algun error o el ID si esta bien.
+ *
+ */
+
+int altaClientePorId(sCliente *aArray, int cantidad,sCliente cliente)
+{
+	int retorno = EXIT_ERROR;
+	int posArray;
+
+	if(aArray != NULL && cantidad >0)
+	{
+		posArray = buscarLugarLibreCliente(aArray,cantidad);
+		if(posArray >= 0 && buscarClientePorId(aArray,cantidad,cliente.id) == -1)
+			{
+				cliente.status=STATUS_NOT_EMPTY;
+				cliente.id=generarIdCliente();
+				aArray[posArray] = cliente;
+				retorno = cliente.id;
+			}
+	}
+	return retorno;
+}
+
+/** \brief busca el primer lugar libre en el array
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \return -1 si hay algun error o la POSICION EN EL ARRAY del primer elemento libre
+ *
+ */
+
+int buscarLugarLibreCliente(sCliente *aArray, int cantidad)
+{
+	int retorno = EXIT_ERROR;
+	int posArray;
+
+	if(aArray != NULL && cantidad >0)
+	{
+		for(posArray=0;posArray<cantidad;posArray++)
+		{
+			if(aArray[posArray].status == STATUS_EMPTY)
+			{
+				retorno = posArray;
+				break;
+			}
+		}
+	}
+	return retorno;
+}
+
+/** \brief busca el elemento con el ID indicado en el array
+ * \param *aArray es el array en el que se buscara el ID
+ * \param cantidad es la cantidad de elementos del array
+ * \param id es el ID a buscar
+ * \return -1 si hay algun error o la POSICION EN EL ARRAY del elemento con dicho ID
+ *
+ */
+
+int buscarClientePorId(sCliente *aArray, int cantidad,int id)
+{
+	int retorno = EXIT_ERROR;
+	int posArray;
+
+	if(aArray != NULL && cantidad >0 && id >= 0)
+	{
+		for(posArray=0;posArray<cantidad;posArray++)
+		{
+			if(aArray[posArray].status == 1)
+			{
+				if(aArray[posArray].id == id)
+				{
+				retorno = posArray;
+				break;
+				}
+			}
+		}
+	}
+	return retorno;
+}
+
+/** \brief cargamos datos de un cliente a traves de interaccion con el usuario
+ * \param *cliente una variable del tipo cliente en donde cargar los datos
+ * \return -1 si hay algun error o 0 si esta bien
+ *
+ */
+
+int altaUnSoloClientePorUI(sCliente *cliente)
+{
+	int retorno = EXIT_ERROR;
+	char bufferNombre[CANT_CARACTERES];
+	char bufferCuit[CANT_CARACTERES];
+	char bufferDireccion[CANT_CARACTERES];
+	char bufferLocalidad[CANT_CARACTERES];
+
+	getString(bufferNombre,"\nIngrese Nombre: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+	retorno = esNombreOApellido(bufferNombre,"No es un nombre valido\n");
+	if(retorno == EXIT_SUCCESS)
+	{
+		getString(bufferCuit,"\nIngrese CUIT(sin espacios, guiones o puntos): ","\nError",1,CANT_CARACTERES_CUIT,CANT_REINTENTOS);
+		retorno = esSoloNumerosPositivos(bufferCuit,"No es un CUIT Valido\n");
+		if(retorno == EXIT_SUCCESS)
+		{
+			getString(bufferLocalidad,"\nIngrese Localidad: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+			retorno = esAlfaNumerico(bufferLocalidad,"No es una localidad valida\n");
+			if(retorno == EXIT_SUCCESS)
+			{
+				getString(bufferDireccion,"\nIngrese Direccion: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+				retorno = esAlfaNumerico(bufferDireccion,"No es una direccion valida\n");
+				if(retorno == EXIT_SUCCESS)
+				{
+					strncpy(cliente->nombre,bufferNombre,CANT_CARACTERES);
+					strncpy(cliente->cuit,bufferCuit,CANT_CARACTERES_CUIT);
+					strncpy(cliente->localidad,bufferLocalidad,CANT_CARACTERES);
+					strncpy(cliente->direccion,bufferDireccion,CANT_CARACTERES);
+				}
+
+			}
+		}
+	}
+	return retorno;
+}
+
+/** \brief imprime el array completo sin exepciones de campos
+ * \param *aArray es el array a mostrar
+ * \param cantidad es la cantidad de elementos del array
+ * \return -1 si hay algun error o 0 si esta bien
+ *
+ */
+
+int imprimirArrayClientes(sCliente *aArray, int cantidad)
+{
+	int i;
+	int retorno = EXIT_ERROR;
+
+	if(aArray != NULL && cantidad>0)
+	{
+		retorno = EXIT_SUCCESS;
+		printf("\n--------------------------------LISTA DE CLIENTES--------------------------------\n");
+		printf("%6s | %3s | %15s | %15s | %15s | %15s\n","STATUS","ID","NOMBRE","CUIT","LOCALIDAD","DIRECCION");
+		for(i=0;i<cantidad;i++)
+		{
+			printf("%6d | %3d | %15s | %15s | %15s | %15s\n",
+			aArray[i].status,aArray[i].id,aArray[i].nombre,aArray[i].cuit,aArray[i].localidad,aArray[i].direccion);
+		}
+	}
+	return retorno;
+}
+
+/** \brief imprime elementos del array con el campo status NOT EMPTY(es decir elementos cargados)
+ * \param *aArray es el array a mostrar
+ * \param cantidad es la cantidad de elementos del array
+ * \return -1 si hay algun error o 0 si esta bien
+ *
+ */
+
+int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad)
+{
+	int i;
+	int retorno = EXIT_ERROR;
+
+	if(aArray != NULL && cantidad>0)
+	{
+		retorno = EXIT_SUCCESS;
+		printf("\n--------------------------------LISTA DE CLIENTES--------------------------------\n");
+		printf("%3s | %15s | %15s | %15s | %15s\n","ID","NOMBRE","CUIT","LOCALIDAD","DIRECCION");
+		for(i=0;i<cantidad;i++)
+		{
+			if(aArray[i].status==STATUS_NOT_EMPTY)
+			{
+				printf("%3d | %15s | %15s | %15s | %15s\n",
+						aArray[i].id,aArray[i].nombre,aArray[i].cuit,aArray[i].localidad,aArray[i].direccion);
+			}
+		}
+	}
+	return retorno;
+}
+
+/** \brief busca un cliente por ID y lo da de baja mediante el campo status (dejandolo EMPTY)
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \param id es el ID a buscar
+ * \return -1 si hay algun error o 0 si esta bien.
+ *
+ */
+
+int bajaClientePorId(sCliente *aArray, int cantidad,int id)
+{
+
+	int retorno = EXIT_ERROR;
+	int posArray;
+	if(aArray != NULL && cantidad>0 && id>=0)
+	{
+		posArray = buscarClientePorId(aArray,cantidad,id);
+		if(posArray != -1)
+		{
+			aArray[posArray].status = STATUS_EMPTY;
+			retorno = EXIT_SUCCESS;
+		}
+	}
+	return retorno;
+}
+
+/** \brief busca un cliente por ID y te da la opcion de modificar algunos campos
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \param id es el ID a buscar
+ * \return -1 si hay algun error o 0 si esta bien.
+ *
+ */
+
+int modificaClientePorId(sCliente *aArray,int cantidad,int id)
+{
+
+	int retorno = EXIT_ERROR;
+	int posArray;
+	int opcion;
+	char bufferDireccion[CANT_CARACTERES];
+	char bufferLocalidad[CANT_CARACTERES];
+	sCliente auxCliente;
+
+	if(aArray != NULL && cantidad>0 && id>=0)
+	{
+		posArray = buscarClientePorId(aArray,cantidad,id);
+		if(posArray != -1)
+		{
+			auxCliente = aArray[posArray];
+			getInt(&opcion,"\nQue desea modificar: [1]Localidad [2]Direccion\n",
+					"\nError!",1,2,CANT_REINTENTOS);
+			switch(opcion)
+			{
+			case 1:
+				getString(bufferLocalidad,"\nIngrese Localidad: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+				retorno = esAlfaNumerico(bufferLocalidad,"No es una localidad valida");
+				if(retorno == EXIT_SUCCESS)
+				{
+					strncpy(auxCliente.localidad,bufferLocalidad,CANT_CARACTERES);
+				}
+				break;
+			case 2:
+				getString(bufferDireccion,"\nIngrese Direccion: ","\nError",1,CANT_CARACTERES,CANT_REINTENTOS);
+				retorno = esAlfaNumerico(bufferDireccion,"No es una direccion valida");
+				if(retorno == EXIT_SUCCESS)
+				{
+					strncpy(auxCliente.direccion,bufferDireccion,CANT_CARACTERES);
+				}
+				break;
+			}
+			aArray[posArray]=auxCliente;
+		}
+	}
+	return retorno;
+}
+
+
+/** \brief carga datos de prueba en el array
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
+ *
+ */
+
+void altaForzadaCliente(sCliente *aArray,int cantidad)
+{
+	sCliente aux[5];
+	char nombre[][CANT_CARACTERES] = {"Dapsa","Petrobras","Shell","YPF","Axion"};
+	char cuit[][CANT_CARACTERES_CUIT] = {"1234","1241241","123931","99313","913841"};
+	char direccion[][CANT_CARACTERES] = {"Sgto Ponce 129","Sgto Ponce 75","Sgto Ponce 23","1 y 25","Castelli"};
+	char localidad[][CANT_CARACTERES]= {"Dock Sud","Dock Sud","Dock Sud","La Plata","Avellaneda"};
+	int i;
+
+	for(i=0;i<5;i++)
+	{
+		strncpy(aux[i].nombre,nombre[i],CANT_CARACTERES);
+		strncpy(aux[i].cuit,cuit[i],CANT_CARACTERES_CUIT);
+		strncpy(aux[i].direccion,direccion[i],CANT_CARACTERES);
+		strncpy(aux[i].localidad,localidad[i],CANT_CARACTERES);
+		altaClientePorId(aArray,cantidad,aux[i]);
+	}
+}
+
+/** \brief carga datos de prueba en el array
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
+ *
+ */
+
+int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
+										sPedido *aPedido,int cantPedido,
+										auxContCliente aContCliente,int cantContCliente)
+{
+	int retorno=EXIT_ERROR;
+	int i;
+	int j;
+
+	if(aArray != NULL && cantidad>0 &&
+		aPedido != NULL && cantPedido>0 &&
+		aContCliente != NULL && cantContCliente>0)
+	{
+		printf("\n--------------------------------LISTA DE CLIENTES--------------------------------\n");
+		printf("%3s | %15s | %15s | %15s | %15s | %15s\n","ID","NOMBRE","CUIT","LOCALIDAD","DIRECCION","PEDIDOS PENDIENTES");
+		for(i=0;i<cantContCliente;i++)
+		{
+			aContCliente[i].idCliente=aArray[i].id;
+			for(j=0;j<cantPedido;j++)
+			{
+				if((aArray[i].id == aPedido[j].idCliente) && (aPedido[j].estado==ESTADO_PENDIENTE))
+				{
+					aContCliente[i].contPedidos++;
+					retorno=EXIT_SUCCESS;
+				}
+			}
+			printf("%3d | %15s | %15s | %15s | %15s | %5d\n",
+			aArray[i].id,aArray[i].nombre,aArray[i].cuit,aArray[i].localidad,aArray[i].direccion,aContCliente[i].contPedidos);
+		}
+	}
+	return retorno;
+}
+
+

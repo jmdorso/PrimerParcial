@@ -194,6 +194,29 @@ int esSoloNumeros(char *pResultado,char *pMensajeError)
 	return retorno;
 }
 
+int esSoloNumerosPositivos(char *pResultado,char *pMensajeError)
+{
+	int retorno = EXIT_ERROR;
+	int posArray=0;
+
+	while(pResultado[posArray] != '\0')
+	{
+		if(posArray == 0 && pResultado[posArray] == '-')
+		{
+			printf("%s",pMensajeError);
+			break;
+		}
+		if(pResultado[posArray] < '0' || pResultado[posArray] > '9')
+		{
+			printf("%s",pMensajeError);
+			retorno = EXIT_ERROR;
+			break;
+		}
+		posArray++;
+		retorno = EXIT_SUCCESS;
+	}
+	return retorno;
+}
 
 int esSoloNumerosFlotantes(char *pResultado,char *pMensajeError)
 {

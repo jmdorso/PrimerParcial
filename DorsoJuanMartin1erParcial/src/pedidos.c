@@ -5,13 +5,12 @@
  *      Author: alumno
  */
 
+#include "pedidos.h"
 #include <stdio.h>
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
-#include "utn.h"
-#include "cliente.h"
-#include "pedidos.h"
+
 
 /** \brief va generando un ID secuencial cada vez que es llamada
  * \param void, no recibe ningun paramentro.
@@ -35,7 +34,7 @@ static int generarIdPedido(void)
  *
  */
 
-int initLugarLibrePedidos(sPedido *aArray, int cantidad)
+int initLugarLibrePedido(sPedido *aArray, int cantidad)
 {
 	int retorno = EXIT_ERROR;
 	int i;
@@ -147,7 +146,6 @@ int altaUnSoloPedidoPorUI(sPedido *pedido,sCliente *aCliente,int cantCliente)
 {
 	int retorno = EXIT_ERROR;
 
-	int bufferEdad;
 	int bufferIdCliente;
 	float cantKgAux;
 
@@ -189,7 +187,7 @@ int altaUnSoloPedidoPorUI(sPedido *pedido,sCliente *aCliente,int cantCliente)
 int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
 {
 	int i;
-	int auxId;
+//	int auxId;
 	int retorno = EXIT_ERROR;
 	char estadoPedido[2][25] = {"Completado","Pendiente"};
 
@@ -202,7 +200,7 @@ int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aClient
 		{
 			if(aArray[i].status==STATUS_NOT_EMPTY)
 			{
-				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
+				//auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
 				printf("%3.d | %10.2f | %15s | %10.d | %10.2f | %10.2f | %10.2f\n",
 						aArray[i].id,aArray[i].cantKg,estadoPedido[aArray[i].estado-1],aArray[i].idCliente,aArray[i].cantKgHDPE,aArray[i].cantKgLDPE,aArray[i].cantKgPP);
 			}
@@ -324,7 +322,7 @@ int imprimirArrayPedidosStatusOkyCompletados(sPedido *aArray, int cantidad,sClie
 	if(aArray != NULL && cantidad>0)
 	{
 		retorno = EXIT_SUCCESS;
-		printf("\n-----------------------------LISTA DE PEDIDOS PENDIENTES--------------------------------\n");
+		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
 		printf("%15s | %15s | %10s | %10s | %10s | %15s\n","CUIT","DIRECCION","KG HDPE","KG LDPE","KG PP","ESTADO");
 		for(i=0;i<cantidad;i++)
 		{
@@ -334,6 +332,54 @@ int imprimirArrayPedidosStatusOkyCompletados(sPedido *aArray, int cantidad,sClie
 				printf("%15s | %15s | %10.2f | %10.2f | %10.2f | %15s\n",
 						aCliente[auxId].cuit,aCliente[auxId].direccion,aArray[i].cantKgHDPE,aArray[i].cantKgLDPE,aArray[i].cantKgPP,estadoPedido[aArray[i].estado-1]);
 			}
+		}
+	}
+	return retorno;
+}
+
+/** \brief carga datos de prueba en el array
+ * \param *aArray es el array de clientes
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
+ *
+ */
+
+int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
+										sPedido *aPedido,int cantPedido,
+										auxContCliente *aContCliente,int cantContCliente)
+{
+	int retorno=EXIT_ERROR;
+	int i;
+	int j;
+
+	if(aArray != NULL && cantidad>0 &&
+		aPedido != NULL && cantPedido>0 &&
+		aContCliente != NULL && cantContCliente>0)
+	{
+		printf("\n--------------------------------LISTA DE CLIENTES--------------------------------\n");
+		printf("%3s | %15s | %15s | %15s | %15s | %15s\n","ID","NOMBRE","CUIT","LOCALIDAD","DIRECCION","PEDIDOS PENDIENTES");
+		for(i=0;i<cantContCliente;i++)
+		{
+			aContCliente[i].status = STATUS_EMPTY;
+			aContCliente[i].contPedidos = 0;
+		}
+		for(i=0;i<cantidad;i++)
+		{
+			aContCliente[i].idCliente=aArray[i].id;
+			for(j=0;j<cantPedido;j++)
+			{
+				if((aArray[i].id == aPedido[j].idCliente) && (aPedido[j].estado==ESTADO_PENDIENTE))
+				{
+					aContCliente[i].contPedidos++;
+					retorno=EXIT_SUCCESS;
+				}
+			}
+			if(aArray[i].status == STATUS_NOT_EMPTY)
+			{
+				printf("%3d | %15s | %15s | %15s | %15s | %5d\n",
+				aArray[i].id,aArray[i].nombre,aArray[i].cuit,aArray[i].localidad,aArray[i].direccion,aContCliente[i].contPedidos);
+			}
+
 		}
 	}
 	return retorno;
