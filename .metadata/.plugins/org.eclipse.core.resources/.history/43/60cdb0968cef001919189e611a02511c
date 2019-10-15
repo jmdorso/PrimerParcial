@@ -33,7 +33,7 @@ typedef struct
 }sCliente;
 
 
-//static int generarIdCliente(void);
+static int generarIdCliente(void);
 
 int initLugarLibreCliente(sCliente *aArray, int cantidad);
 int altaClientePorId(sCliente *aArray, int cantidad,sCliente cliente);

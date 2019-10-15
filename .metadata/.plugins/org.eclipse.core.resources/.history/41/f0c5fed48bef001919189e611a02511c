@@ -296,8 +296,11 @@ int imprimirArrayPedidosStatusOkyPendientes(sPedido *aArray, int cantidad,sClien
 			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_PENDIENTE)
 			{
 				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
-				printf("%15s | %15s | %10.2f | %15s\n",
+				if((aCliente[i].id==aArray[i].idCliente) && (aCliente[i].status==STATUS_NOT_EMPTY))
+				{
+					printf("%15s | %15s | %10.2f | %15s\n",
 							aCliente[auxId].cuit,aCliente[auxId].direccion,aArray[i].cantKg,estadoPedido[aArray[i].estado-1]);
+				}
 			}
 		}
 	}
@@ -390,17 +393,15 @@ int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
 	return retorno;
 }
 
-/** \brief busca un cliente por ID y lo da de baja mediante el campo status (dejandolo EMPTY) y si posee pedidos tambien los dara de baja
+/** \brief busca un cliente por ID y lo da de baja mediante el campo status (dejandolo EMPTY)
  * \param *aArray es el array de clientes
  * \param cantidad es la cantidad de elementos del array
  * \param id es el ID a buscar
- * \param *aPedidos el array de pedidos
- * \param cantPedidos la cantidad de elementos del array de pedidos
  * \return -1 si hay algun error o 0 si esta bien.
  *
  */
 
-int bajaClienteYSusPedidosPorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
+int bajaClientePorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
 {
 
 	int retorno = EXIT_ERROR;
@@ -417,7 +418,6 @@ int bajaClienteYSusPedidosPorId(sCliente *aArray, int cantidad,int id,sPedido *a
 				if(aPedidos[i].idCliente==id)
 				{
 					aPedidos[i].idCliente=STATUS_EMPTY;
-					aPedidos[i].status=STATUS_EMPTY;
 				}
 			}
 			retorno = EXIT_SUCCESS;

@@ -254,30 +254,22 @@ int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad)
  *
  */
 
-/*int bajaClientePorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
+int bajaClientePorId(sCliente *aArray, int cantidad,int id)
 {
 
 	int retorno = EXIT_ERROR;
 	int posArray;
-	int i;
-	if(aArray != NULL && cantidad>0 && id>=0 && aPedidos != NULL && cantPedidos >0)
+	if(aArray != NULL && cantidad>0 && id>=0)
 	{
 		posArray = buscarClientePorId(aArray,cantidad,id);
 		if(posArray != -1)
 		{
 			aArray[posArray].status = STATUS_EMPTY;
-			for(i=0;i<cantPedidos;i++)
-			{
-				if(aPedidos[i].idCliente==id)
-				{
-					aPedidos[i].idCliente=STATUS_EMPTY;
-				}
-			}
 			retorno = EXIT_SUCCESS;
 		}
 	}
 	return retorno;
-}*/
+}
 
 /** \brief busca un cliente por ID y te da la opcion de modificar algunos campos
  * \param *aArray es el array de clientes

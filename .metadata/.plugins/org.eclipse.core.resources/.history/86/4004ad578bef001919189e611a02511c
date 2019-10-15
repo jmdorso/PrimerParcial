@@ -254,7 +254,7 @@ int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad)
  *
  */
 
-/*int bajaClientePorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
+int bajaClientePorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
 {
 
 	int retorno = EXIT_ERROR;
@@ -277,7 +277,7 @@ int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad)
 		}
 	}
 	return retorno;
-}*/
+}
 
 /** \brief busca un cliente por ID y te da la opcion de modificar algunos campos
  * \param *aArray es el array de clientes

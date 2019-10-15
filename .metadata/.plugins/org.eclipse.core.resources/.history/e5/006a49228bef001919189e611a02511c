@@ -33,7 +33,7 @@ typedef struct
 }sCliente;
 
 
-//static int generarIdCliente(void);
+static int generarIdCliente(void);
 
 int initLugarLibreCliente(sCliente *aArray, int cantidad);
 int altaClientePorId(sCliente *aArray, int cantidad,sCliente cliente);
@@ -42,7 +42,7 @@ int buscarClientePorId(sCliente *aArray, int cantidad,int id);
 int altaUnSoloClientePorUI(sCliente *cliente,sCliente *aArray,int cantidad);
 int imprimirArrayClientes(sCliente *aArray, int cantidad);
 int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad);
-
+int bajaClientePorId(sCliente *aArray, int cantidad,int id);
 int modificaClientePorId(sCliente *aArray,int cantidad,int id);
 void altaForzadaCliente(sCliente *aArray,int cantidad);
 

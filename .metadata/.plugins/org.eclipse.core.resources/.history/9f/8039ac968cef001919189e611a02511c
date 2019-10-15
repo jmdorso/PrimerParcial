@@ -42,7 +42,7 @@ struct
 	int contPedidos;
 }typedef auxContCliente;
 
-//static int generarIdPedido(void);
+static int generarIdPedido(void);
 
 int initLugarLibrePedido(sPedido *aArray, int cantidad);
 int altaPedidoPorId(sPedido *aArray, int cantidad,sPedido pedido);

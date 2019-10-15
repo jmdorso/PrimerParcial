@@ -390,17 +390,15 @@ int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
 	return retorno;
 }
 
-/** \brief busca un cliente por ID y lo da de baja mediante el campo status (dejandolo EMPTY) y si posee pedidos tambien los dara de baja
+/** \brief busca un cliente por ID y lo da de baja mediante el campo status (dejandolo EMPTY)
  * \param *aArray es el array de clientes
  * \param cantidad es la cantidad de elementos del array
  * \param id es el ID a buscar
- * \param *aPedidos el array de pedidos
- * \param cantPedidos la cantidad de elementos del array de pedidos
  * \return -1 si hay algun error o 0 si esta bien.
  *
  */
 
-int bajaClienteYSusPedidosPorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
+int bajaClientePorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos)
 {
 
 	int retorno = EXIT_ERROR;

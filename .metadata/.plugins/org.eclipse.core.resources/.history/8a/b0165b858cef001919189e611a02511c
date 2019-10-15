@@ -36,7 +36,7 @@ int main(void)
 	int opcion;
 	int flagAltaPedido=ALTA_DNS;
 	int auxId;
-	//int id;
+	int id;
 	int contClientes = 5;
 
 	initLugarLibreCliente(aClientes,CANT_CLIENTES);
@@ -131,7 +131,7 @@ int main(void)
 							CANT_REINTENTOS);
 					if(confirmarBaja == 's' || confirmarBaja == 'S')
 					{
-						if(bajaClienteYSusPedidosPorId(aClientes,CANT_CLIENTES,unClienteBaja.id,aPedidos,CANT_PEDIDOS)==EXIT_SUCCESS)
+						if(bajaClientePorId(aClientes,CANT_CLIENTES,unClienteBaja.id,aPedidos,CANT_PEDIDOS)==EXIT_SUCCESS)
 						{
 							contClientes--;
 							printf("\nBAJA EXITOSA\n\n");
@@ -148,11 +148,6 @@ int main(void)
 				}
 	    		break;
 	    	case 4:
-	    		if(contClientes == 0)
-	    						{
-	    							printf("\nERROR. Falta ingresar al menos un cliente.\n\n");
-	    							break;
-	    						}
 				if(altaUnSoloPedidoPorUI(&unPedidoAlta,aClientes,CANT_CLIENTES)==EXIT_SUCCESS)
 				{
 					if(altaPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoAlta)==EXIT_SUCCESS)
@@ -177,7 +172,7 @@ int main(void)
 					printf("Quiere Modificar el siguiente Pedido: \n");
 					printf("ID: %d",aPedidos[auxId].id);
 					getChar(&confirmarModif,
-							"\nSeguro desea modificar? Ingrese s (o cualquier tecla para cancelar modificacion): ",
+							"\nSeguro desea modificar? Ingrese s (o cualquier tecla para continuar): ",
 							"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
 							'a',
 							'z',
@@ -211,7 +206,7 @@ int main(void)
 	    		break;
 	    	case 9:
 				getChar(&salir,
-						"\nSeguro desea salir? Ingrese s (o cualquier tecla para continuar en el programa): ",
+						"\nSeguro desea salir? Ingrese s (o cualquier tecla para continuar): ",
 						"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
 						'a',
 						'z',
