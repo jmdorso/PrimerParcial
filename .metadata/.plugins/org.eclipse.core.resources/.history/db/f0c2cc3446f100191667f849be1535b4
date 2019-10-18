@@ -17,7 +17,7 @@ int clienteConMasPedidos(sCliente *aCliente,int cantClientes,sPedido *aPedido,in
 int clienteConMasKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos);
 int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos);
 int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
-int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
+int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aPedidos, int cantPedidos,sCliente *aCliente, int cantClientes,auxContCliente *aCont,int cantContCliente);
 int imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 
 #endif /* INFORMES_H_ */

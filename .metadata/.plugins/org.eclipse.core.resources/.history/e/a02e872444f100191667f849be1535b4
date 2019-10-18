@@ -356,7 +356,6 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 	int i;
 	int cont=0;
 	int auxId;
-	int flag=0;
 	float promedio;
 	float sumaKgProcesados;
 	int retorno = EXIT_ERROR;
@@ -364,8 +363,6 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 
 	if(aArray != NULL && cantidad>0)
 	{
-
-
 		retorno = EXIT_SUCCESS;
 		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
 		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","% PLASTICO RECICLADO","ESTADO");
@@ -377,17 +374,10 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
 				if(sumaKgProcesados <= 100)
 				{
-					if(aArray[i].idCliente==aCliente[auxId].id && flag==0)
-					{
 						cont++;
-						flag=1;
-					}
-					if(aArray[i].idCliente!=aCliente[auxId].id )
-					{
-						cont++;
-					}
+
 					printf("%12d | %15s | %20.2f | %15s \n",
-					aArray[i].id,aCliente[auxId].cuit,sumaKgProcesados,estadoPedido[aArray[i].estado-1]);
+							aArray[i].id,aCliente[auxId].cuit,sumaKgProcesados,estadoPedido[aArray[i].estado-1]);
 				}
 
 			}

@@ -295,7 +295,7 @@ int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPe
 					{
 						min = sumaReciclados;
 					}
-					flag++;
+					flag++
 					if(sumaReciclados < min)
 					{
 						min=sumaReciclados;
@@ -305,94 +305,14 @@ int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPe
 
 		}
 		posCliente=buscarClientePorId(aCliente,cantClientes,auxIdCliente);
-		printf("\n\nEl cliente con menos KG reciclados: \n");
+		printf("\n\nEl cliente con mas KG reciciclados: \n");
 		printf("Nombre: %s\n",aCliente[posCliente].nombre);
 		printf("CUIT: %s\n",aCliente[posCliente].cuit);
 		printf("Localidad: %s\n",aCliente[posCliente].localidad);
 		printf("Direccion: %s\n",aCliente[posCliente].direccion);
-		printf("CANT KG RECICLADOS %.2f\n\n",min);
+		printf("CANT KG RECICLADOS %.2f\n\n",max);
 	}
 
 
-	return retorno;
-}
-
-int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
-{
-	int i;
-	int cont;
-	int auxId;
-	float promedio;
-	float sumaKgProcesados;
-	int retorno = EXIT_ERROR;
-	char estadoPedido[2][25] = {"Completado","Pendiente"};
-
-	if(aArray != NULL && cantidad>0)
-	{
-		retorno = EXIT_SUCCESS;
-		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
-		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","% PLASTICO RECICLADO","ESTADO");
-		for(i=0;i<cantidad;i++)
-		{
-			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_COMPLETADO)
-			{
-				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
-				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
-				if(sumaKgProcesados >= 1000)
-				{
-					printf("%12d | %15s | %20.2f | %15s \n",
-							aArray[i].id,aCliente[auxId].cuit,sumaKgProcesados,estadoPedido[aArray[i].estado-1]);
-				}
-
-			}
-		}
-//		printf("\nCANTIDAD TOTAL DE CLIENTES")
-	}
-	return retorno;
-}
-
-int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
-{
-	int i;
-	int cont=0;
-	int auxId;
-	int flag=0;
-	float promedio;
-	float sumaKgProcesados;
-	int retorno = EXIT_ERROR;
-	char estadoPedido[2][25] = {"Completado","Pendiente"};
-
-	if(aArray != NULL && cantidad>0)
-	{
-
-
-		retorno = EXIT_SUCCESS;
-		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
-		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","% PLASTICO RECICLADO","ESTADO");
-		for(i=0;i<cantidad;i++)
-		{
-			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_COMPLETADO)
-			{
-				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
-				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
-				if(sumaKgProcesados <= 100)
-				{
-					if(aArray[i].idCliente==aCliente[auxId].id && flag==0)
-					{
-						cont++;
-						flag=1;
-					}
-					if(aArray[i].idCliente!=aCliente[auxId].id )
-					{
-						cont++;
-					}
-					printf("%12d | %15s | %20.2f | %15s \n",
-					aArray[i].id,aCliente[auxId].cuit,sumaKgProcesados,estadoPedido[aArray[i].estado-1]);
-				}
-
-			}
-		}
-	printf("\nCANTIDAD TOTAL DE CLIENTES %d",cont);
-	}
 	return retorno;
 }

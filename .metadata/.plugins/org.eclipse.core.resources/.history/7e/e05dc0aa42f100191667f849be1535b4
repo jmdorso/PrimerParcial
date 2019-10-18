@@ -222,8 +222,6 @@ int main(void)
 	    		clienteConMenosKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
 	    		printf("\nF) Cantidad de Clientes que reciclaron mas de 1000 kilos\n");
 	    		imprimirArrayPedidosStatusOkyCompletadosMasMilKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
-	    		printf("\nG) Cantidad de Clientes que reciclaron menos de 100 kilos\n");
-	    		imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		printf("\nH) Imprimir  pedidos completados indicando PORCENTAJE de plastico reciclado.\n");
 	    		imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;

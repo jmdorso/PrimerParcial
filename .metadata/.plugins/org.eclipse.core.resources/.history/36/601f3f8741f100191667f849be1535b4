@@ -15,7 +15,6 @@
 #include "utn.h"
 #include "cliente.h"
 #include "pedidos.h"
-#include "informes.h"
 
 #define ALTA_OK 1
 #define ALTA_DNS 0
@@ -220,10 +219,6 @@ int main(void)
 	    		clienteConMasKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
 	    		printf("\nE) Cliente que reciclo menos kilos.\n");
 	    		clienteConMenosKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
-	    		printf("\nF) Cantidad de Clientes que reciclaron mas de 1000 kilos\n");
-	    		imprimirArrayPedidosStatusOkyCompletadosMasMilKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
-	    		printf("\nG) Cantidad de Clientes que reciclaron menos de 100 kilos\n");
-	    		imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		printf("\nH) Imprimir  pedidos completados indicando PORCENTAJE de plastico reciclado.\n");
 	    		imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
