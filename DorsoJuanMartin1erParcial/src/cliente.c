@@ -340,14 +340,14 @@ int modificaClientePorId(sCliente *aArray,int cantidad,int id)
 
 void altaForzadaCliente(sCliente *aArray,int cantidad)
 {
-	sCliente aux[5];
-	char nombre[][CANT_CARACTERES] = {"Dapsa","Petrobras","Shell","YPF","Axion"};
-	char cuit[][CANT_CARACTERES_CUIT] = {"1234","1241241","123931","99313","913841"};
-	char direccion[][CANT_CARACTERES] = {"Sgto Ponce 129","Sgto Ponce 75","Sgto Ponce 23","1 y 25","Castelli"};
-	char localidad[][CANT_CARACTERES]= {"Dock Sud","Dock Sud","Dock Sud","La Plata","Avellaneda"};
+	sCliente aux[6];
+	char nombre[][CANT_CARACTERES] = {"Telefonica","DATASOFT","NESTLE","TERRABUSI","DIA","QUILMES"};
+	char cuit[][CANT_CARACTERES_CUIT] = {"30-11223344-5","30-44556677-6","30-88995521-9","30-56781423-5","31-54581253-3","30-51485759-6"};
+	char direccion[][CANT_CARACTERES] = {"Lima 1234","Corrientes 2547","Cucha cucha 555","Rocha 784","Mitre 750","Rocha 741"};
+	char localidad[][CANT_CARACTERES]= {"CABA","CABA","LANUS","QUILMES","AVELLANEDA","QUILMES"};
 	int i;
 
-	for(i=0;i<5;i++)
+	for(i=0;i<6;i++)
 	{
 		strncpy(aux[i].nombre,nombre[i],CANT_CARACTERES);
 		strncpy(aux[i].cuit,cuit[i],CANT_CARACTERES_CUIT);

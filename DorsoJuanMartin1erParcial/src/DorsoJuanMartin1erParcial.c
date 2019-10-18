@@ -32,17 +32,21 @@ int main(void)
 	sPedido unPedidoAlta;
 	sPedido unPedidoModif;
 	sPedido aPedidos[CANT_PEDIDOS];
-	auxContCliente aContCliente[CANT_CLIENTES];
+	auxContCliente aContClientePendiente[CANT_CLIENTES];
+	auxContCliente aContClienteCompletado[CANT_CLIENTES];
+	auxContCliente aContClienteTotal[CANT_CLIENTES];
 	int opcion;
 	int flagAltaPedido=ALTA_DNS;
 	int auxId;
 	//int id;
-	int contClientes = 5;
+	int contClientes = 6;
 
 	initLugarLibreCliente(aClientes,CANT_CLIENTES);
 	initLugarLibrePedido(aPedidos,CANT_PEDIDOS);
 	altaForzadaCliente(aClientes,CANT_CLIENTES);
 	imprimirArrayClientesStatusOk(aClientes,CANT_CLIENTES);
+	altaForzadaPedido(aPedidos,CANT_PEDIDOS);
+	imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 
 	do{
 		printf("----------------------------------------------------------------------------------\n");
@@ -55,9 +59,10 @@ int main(void)
 	    printf("06. Imprimir clientes\n");
 	    printf("07. Imprimr pedidos pendientes\n");
 	    printf("08. Imprimir pedidos precoesados\n");
-	    printf("09. Salir\n\n");
+	    printf("09. Informes\n");
+	    printf("10. Salir\n\n");
 
-	    if(getValidIntFromString(&opcion,"\tIngrese opción: ","\nError",1,9,CANT_REINTENTOS)==0)
+	    if(getValidIntFromString(&opcion,"\tIngrese opción: ","\nError",1,10,CANT_REINTENTOS)==0)
 	    {
 	    	switch(opcion)
 	    	{
@@ -157,17 +162,11 @@ int main(void)
 				{
 					if(altaPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoAlta)==EXIT_SUCCESS)
 					{
-	    				flagAltaPedido=ALTA_OK;
 	    				printf("\n\nSe ingreso correctamente el pedido\n\n");
 					}
 				}
 	    		break;
 	    	case 5:
-				if(flagAltaPedido == ALTA_DNS)
-				{
-					printf("\nERROR. Falta ingresar al menos un pedido.\n\n");
-					break;
-				}
 				imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 				getValidIntFromString(&auxId,"\nIngrese el ID: ","\nError\n",1,CANT_PEDIDOS,CANT_REINTENTOS);
 				unPedidoModif.id = auxId;
@@ -201,7 +200,7 @@ int main(void)
 	    		imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 6:
-	    		contadorDePedidosPendientePorCliente(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContCliente,CANT_CLIENTES);
+	    		contadorDePedidosPendientePorCliente(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClientePendiente,CANT_CLIENTES);
 	    		break;
 	    	case 7:
 	    		imprimirArrayPedidosStatusOkyPendientes(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
@@ -210,6 +209,18 @@ int main(void)
 	    		imprimirArrayPedidosStatusOkyCompletados(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 9:
+	    		printf("\nA) Cliente con mas pedidos pendientes.\n");
+	    		clienteConMasPedidosPendientes(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClientePendiente,CANT_CLIENTES);
+	    		printf("\nB) Cliente con mas pedidos completados.\n");
+	    		clienteConMasPedidosCompletados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
+	    		printf("\nC) Cliente con mas pedidos totales.\n");
+	    		clienteConMasPedidos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
+	    		printf("\nD) Cliente que reciclo mas kilos.\n");
+	    		clienteConMasKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
+	    		printf("\nH) Imprimir  pedidos completados indicando % de plastico recilcado.\n");
+	    		imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
+	    		break;
+	    	case 10:
 				getChar(&salir,
 						"\nSeguro desea salir? Ingrese s (o cualquier tecla para continuar en el programa): ",
 						"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",

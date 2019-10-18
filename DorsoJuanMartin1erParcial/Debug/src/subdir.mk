@@ -6,18 +6,21 @@
 C_SRCS += \
 ../src/DorsoJuanMartin1erParcial.c \
 ../src/cliente.c \
+../src/informes.c \
 ../src/pedidos.c \
 ../src/utn.c 
 
 OBJS += \
 ./src/DorsoJuanMartin1erParcial.o \
 ./src/cliente.o \
+./src/informes.o \
 ./src/pedidos.o \
 ./src/utn.o 
 
 C_DEPS += \
 ./src/DorsoJuanMartin1erParcial.d \
 ./src/cliente.d \
+./src/informes.d \
 ./src/pedidos.d \
 ./src/utn.d 
 

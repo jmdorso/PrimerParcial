@@ -1,0 +1,20 @@
+/*
+ * informes.h
+ *
+ *  Created on: 17 oct. 2019
+ *      Author: alumno
+ */
+
+#ifndef INFORMES_H_
+#define INFORMES_H_
+
+#include "pedidos.h"
+
+
+int clienteConMasPedidosPendientes(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clienteConMasPedidosCompletados(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clienteConMasPedidos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clienteConMasKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos);
+int imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
+
+#endif /* INFORMES_H_ */

@@ -1,0 +1,135 @@
+/*
+ * informes.c
+ *
+ *  Created on: 17 oct. 2019
+ *      Author: alumno
+ */
+
+#include "informes.h"
+#include "pedidos.h"
+#include <stdio.h>
+#include <stdio_ext.h>
+#include <stdlib.h>
+#include <string.h>
+
+int clienteConMasPedidosPendientes(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int posPedido;
+	int max=0;;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 )
+	{
+
+		for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aCliente[i].id == aPedido[j].idCliente) && (aPedido[j].estado==ESTADO_PENDIENTE))
+						{
+							aCont[i].contPedidos++;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+					j=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					if(i==0)
+					{
+						max=aCont[i].contPedidos;
+					}
+					if(aCont[i].contPedidos > max)
+					{
+						max=aCont[i].contPedidos;
+						auxIdCliente=aCont[i].idCliente;
+					}
+				}
+		posCliente=buscarClientePorId(aCliente,cantClientes,auxIdCliente);
+		printf("\n\nEl cliente que mas pedidos posee es: \n");
+		printf("Nombre: %s\n",aCliente[posCliente].nombre);
+		printf("CUIT: %s\n",aCliente[posCliente].cuit);
+		printf("Localidad: %s\n",aCliente[posCliente].localidad);
+		printf("Direccion: %s\n",aCliente[posCliente].direccion);
+		printf("CANT PEDIDOS PENDIENTES %d\n\n",max);
+	}
+
+
+	return retorno;
+}
+
+int clienteConMasPedidosCompletados(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int posPedido;
+	int max=0;;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 )
+	{
+
+		for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aCliente[i].id == aPedido[j].idCliente) && (aPedido[j].estado==ESTADO_COMPLETADO))
+						{
+							aCont[i].contPedidos++;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+					j=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					if(i==0)
+					{
+						max=aCont[i].contPedidos;
+					}
+					if(aCont[i].contPedidos > max)
+					{
+						max=aCont[i].contPedidos;
+						auxIdCliente=aCont[i].idCliente;
+					}
+				}
+		posCliente=buscarClientePorId(aCliente,cantClientes,auxIdCliente);
+		printf("\n\nEl cliente que mas pedidos posee es: \n");
+		printf("Nombre: %s\n",aCliente[posCliente].nombre);
+		printf("CUIT: %s\n",aCliente[posCliente].cuit);
+		printf("Localidad: %s\n",aCliente[posCliente].localidad);
+		printf("Direccion: %s\n",aCliente[posCliente].direccion);
+		printf("CANT PEDIDOS PENDIENTES %d\n\n",max);
+	}
+
+
+	return retorno;
+}

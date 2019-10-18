@@ -57,6 +57,7 @@ int contadorDePedidosPendientePorCliente(sCliente *aArray,int cantidad,
 										sPedido *aPedido,int cantPedido,
 										auxContCliente *aContCliente,int cantContCliente);
 int bajaClienteYSusPedidosPorId(sCliente *aArray, int cantidad,int id,sPedido *aPedidos,int cantPedidos);
+void altaForzadaPedido(sPedido *aArray,int cantidad);
 
 #endif /* PEDIDOS_H_ */
 

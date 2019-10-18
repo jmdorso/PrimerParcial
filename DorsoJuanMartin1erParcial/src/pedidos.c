@@ -425,3 +425,37 @@ int bajaClienteYSusPedidosPorId(sCliente *aArray, int cantidad,int id,sPedido *a
 	}
 	return retorno;
 }
+
+
+/** \brief carga datos de prueba en el array
+ * \param *aArray es el array de pedidos
+ * \param cantidad es la cantidad de elementos del array
+ * \return VOID
+ *
+ */
+
+void altaForzadaPedido(sPedido *aArray,int cantidad)
+{
+	sPedido aux[9];
+	int idCliente[] = {1,1,2,2,3,4,1,5,6};
+	float cantKg[] = {1000,800,100,300,1500,750,200,30,456};
+	float cantKgHdpe[] = {200,210,0,0,500,100,0,10,0};
+	float cantKgLdpe[] = {145,45,0,0,150,50,0,5,0};
+	float cantKgPp[] = {230,30,0,0,270,70,0,3,0};
+	//int id[] = {1,2,3,4,5,6,7,8,9};
+	int estado[] = {ESTADO_COMPLETADO,ESTADO_COMPLETADO,ESTADO_PENDIENTE,ESTADO_PENDIENTE,ESTADO_COMPLETADO,ESTADO_COMPLETADO,ESTADO_PENDIENTE,ESTADO_COMPLETADO,ESTADO_PENDIENTE};
+	int i;
+
+	for(i=0;i<9;i++)
+	{
+		aux[i].id=generarIdPedido();
+		aux[i].idCliente=idCliente[i];
+		aux[i].cantKg=cantKg[i];
+		aux[i].cantKgHDPE=cantKgHdpe[i];
+		aux[i].cantKgLDPE=cantKgLdpe[i];
+		aux[i].cantKgPP=cantKgPp[i];
+		aux[i].estado=estado[i];
+		aux[i].status=STATUS_NOT_EMPTY;
+		aArray[i]=aux[i];
+	}
+}
