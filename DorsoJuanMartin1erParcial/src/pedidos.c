@@ -176,6 +176,37 @@ int altaUnSoloPedidoPorUI(sPedido *pedido,sCliente *aCliente,int cantCliente)
 	return retorno;
 }
 
+/** \brief imprime elementos del array
+ * \param *aArray es el array a mostrar
+ * \param cantidad es la cantidad de elementos del array
+ * \param aClientes es el array de clientes a mostrar
+ * \param cantClientes es la cant de clientes
+ * \return -1 si hay algun error o 0 si esta bien
+ *
+ */
+
+int imprimirArrayPedidos(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
+{
+	int i;
+//	int auxId;
+	int retorno = EXIT_ERROR;
+	char estadoPedido[2][25] = {"Completado","Pendiente"};
+
+	if(aArray != NULL && cantidad>0)
+	{
+		retorno = EXIT_SUCCESS;
+		printf("\n--------------------------------LISTA DE PEDIDOS--------------------------------\n");
+		printf("%3s | %10s | %15s | %3s | %10s | %10s | %10s\n","ID","CANTKG","ESTADO","ID CLIENTE","KG HDPE","KG LDPE","KG PP");
+		for(i=0;i<cantidad;i++)
+		{
+			printf("%3.d | %10.2f | %15s | %10.d | %10.2f | %10.2f | %10.2f\n",
+						aArray[i].id,aArray[i].cantKg,estadoPedido[aArray[i].estado-1],aArray[i].idCliente,aArray[i].cantKgHDPE,aArray[i].cantKgLDPE,aArray[i].cantKgPP);
+
+		}
+	}
+	return retorno;
+}
+
 /** \brief imprime elementos del array con el campo status NOT EMPTY(es decir elementos cargados)
  * \param *aArray es el array a mostrar
  * \param cantidad es la cantidad de elementos del array

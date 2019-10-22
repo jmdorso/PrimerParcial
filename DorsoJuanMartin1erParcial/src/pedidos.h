@@ -40,6 +40,7 @@ struct
 	//***************
 	int idCliente;
 	int contPedidos;
+	float acum;
 }typedef auxContCliente;
 
 //static int generarIdPedido(void);
@@ -49,6 +50,7 @@ int altaPedidoPorId(sPedido *aArray, int cantidad,sPedido pedido);
 int buscarLugarLibrePedido(sPedido *aArray, int cantidad);
 int buscarPedidoPorId(sPedido *aArray, int cantidad,int id);
 int altaUnSoloPedidoPorUI(sPedido *pedido,sCliente *aCliente,int cantCliente);
+int imprimirArrayPedidos(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 int imprimirArrayPedidosStatusOk(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 int procesarResiduosPorID(sPedido *aArray,int cantidad,int id);
 int imprimirArrayPedidosStatusOkyPendientes(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);

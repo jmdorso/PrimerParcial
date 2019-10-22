@@ -225,7 +225,7 @@ int imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(sPedido *aArray,
 			{
 				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
 				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
-				promedio=(sumaKgProcesados/aArray[i].cantKg)*100;
+				promedio=(sumaKgProcesados*100)/aArray[i].cantKg;
 				printf("%12d | %15s | %20.2f | %15s \n",
 						aArray[i].id,aCliente[auxId].cuit,promedio,estadoPedido[aArray[i].estado-1]);
 			}
@@ -331,7 +331,7 @@ int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantid
 	{
 		retorno = EXIT_SUCCESS;
 		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
-		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","% PLASTICO RECICLADO","ESTADO");
+		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","CANT PLASTICO RECICLADO","ESTADO");
 		for(i=0;i<cantidad;i++)
 		{
 			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_COMPLETADO)
@@ -356,8 +356,6 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 	int i;
 	int cont=0;
 	int auxId;
-	int flag=0;
-	float promedio;
 	float sumaKgProcesados;
 	int retorno = EXIT_ERROR;
 	char estadoPedido[2][25] = {"Completado","Pendiente"};
@@ -368,7 +366,7 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 
 		retorno = EXIT_SUCCESS;
 		printf("\n-----------------------------LISTA DE PEDIDOS COMPLETADOS--------------------------------\n");
-		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","% PLASTICO RECICLADO","ESTADO");
+		printf("%12s | %15s | %15s | %15s\n","ID PEDIDO", "CUIT","CANT PLASTICO RECICLADO","ESTADO");
 		for(i=0;i<cantidad;i++)
 		{
 			if(aArray[i].status==STATUS_NOT_EMPTY && aArray[i].estado==ESTADO_COMPLETADO)
@@ -377,15 +375,15 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
 				if(sumaKgProcesados <= 100)
 				{
-					if(aArray[i].idCliente==aCliente[auxId].id && flag==0)
+					if(aArray[i].idCliente!=aCliente[auxId].id)
+					{
+						cont--;
+					}
+					if(aArray[i].idCliente==aCliente[auxId].id)
 					{
 						cont++;
-						flag=1;
 					}
-					if(aArray[i].idCliente!=aCliente[auxId].id )
-					{
-						cont++;
-					}
+
 					printf("%12d | %15s | %20.2f | %15s \n",
 					aArray[i].id,aCliente[auxId].cuit,sumaKgProcesados,estadoPedido[aArray[i].estado-1]);
 				}
@@ -393,6 +391,315 @@ int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int can
 			}
 		}
 	printf("\nCANTIDAD TOTAL DE CLIENTES %d",cont);
+	}
+	return retorno;
+}
+
+int clienteConMasKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int flag=0;
+	float max=0;
+	float sumaKgProcesados;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 &&
+		aCont != NULL && cantContCliente>0)
+	{
+
+		for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+					aCont[i].acum=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aPedido[j].status==STATUS_NOT_EMPTY)&&(aPedido[j].estado==ESTADO_COMPLETADO)&&(aCliente[i].id == aPedido[j].idCliente))
+						{
+							sumaKgProcesados=aPedido[j].cantKgHDPE+aPedido[j].cantKgLDPE+aPedido[j].cantKgPP;
+							aCont[i].contPedidos++;
+							aCont[i].acum=sumaKgProcesados + aCont[i].acum;
+							aCont[i].status=STATUS_NOT_EMPTY;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					if(aCont[i].status==STATUS_NOT_EMPTY && flag==0)
+					{
+						max=aCont[i].acum;
+						auxIdCliente=aCont[i].idCliente;
+						flag=1;
+					}
+					if(aCont[i].status==STATUS_NOT_EMPTY && aCont[i].acum > max)
+					{
+						max=aCont[i].acum;
+						auxIdCliente=aCont[i].idCliente;
+					}
+				}
+				posCliente=buscarClientePorId(aCliente,cantClientes,auxIdCliente);
+				printf("\n\nEl cliente con mas KG reciclados: \n");
+				printf("Nombre: %s\n",aCliente[posCliente].nombre);
+				printf("CUIT: %s\n",aCliente[posCliente].cuit);
+				printf("Localidad: %s\n",aCliente[posCliente].localidad);
+				printf("Direccion: %s\n",aCliente[posCliente].direccion);
+				printf("CANT KG RECICLADOS %.2f\n\n",max);
+	}
+
+
+	return retorno;
+}
+
+int clienteConMenosKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int flag=0;
+	float min=0;
+	float sumaKgProcesados;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 &&
+		aCont != NULL && cantContCliente>0)
+	{
+
+		for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+					aCont[i].acum=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aPedido[j].status==STATUS_NOT_EMPTY)&&(aPedido[j].estado==ESTADO_COMPLETADO)&&(aCliente[i].id == aPedido[j].idCliente))
+						{
+							sumaKgProcesados=aPedido[j].cantKgHDPE+aPedido[j].cantKgLDPE+aPedido[j].cantKgPP;
+							aCont[i].contPedidos++;
+							aCont[i].acum=sumaKgProcesados + aCont[i].acum;
+							aCont[i].status=STATUS_NOT_EMPTY;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					if(aCont[i].status==STATUS_NOT_EMPTY && flag==0)
+					{
+						min=aCont[i].acum;
+						auxIdCliente=aCont[i].idCliente;
+						flag=1;
+					}
+					if(aCont[i].status == STATUS_NOT_EMPTY && aCont[i].acum < min)
+					{
+						min=aCont[i].acum;
+						auxIdCliente=aCont[i].idCliente;
+					}
+				}
+				posCliente=buscarClientePorId(aCliente,cantClientes,auxIdCliente);
+				printf("\n\nEl cliente con menos KG reciclados: \n");
+				printf("Nombre: %s\n",aCliente[posCliente].nombre);
+				printf("CUIT: %s\n",aCliente[posCliente].cuit);
+				printf("Localidad: %s\n",aCliente[posCliente].localidad);
+				printf("Direccion: %s\n",aCliente[posCliente].direccion);
+				printf("CANT KG RECICLADOS %.2f\n\n",min);
+	}
+
+
+	return retorno;
+}
+
+int clientesConMenosCienKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int flag=0;
+	int cont=0;
+	float min=0;
+	float sumaKgProcesados;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 &&
+		aCont != NULL && cantContCliente>0)
+	{
+
+		for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+					aCont[i].acum=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aPedido[j].status==STATUS_NOT_EMPTY)&&(aPedido[j].estado==ESTADO_COMPLETADO)&&(aCliente[i].id == aPedido[j].idCliente))
+						{
+							sumaKgProcesados=aPedido[j].cantKgHDPE+aPedido[j].cantKgLDPE+aPedido[j].cantKgPP;
+							aCont[i].contPedidos++;
+							aCont[i].acum=sumaKgProcesados + aCont[i].acum;
+							aCont[i].status=STATUS_NOT_EMPTY;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+				}
+				printf("\n-----------------------------LISTA DE CLIENTES CON MENOS 100 KG RECICLADOS--------------------------------\n");
+				printf("%12s | %15s | %15s | %20s\n","ID CLIENTE", "CUIT","NOMBRE","CANT PLASTICO RECICLADO");
+				for(i=0;i<cantPedidos;i++)
+				{
+					if(aCont[i].status==STATUS_NOT_EMPTY && aPedido[i].estado==ESTADO_COMPLETADO && aCont[i].acum <= 100 && aCont[i].contPedidos > 0)
+					{
+						cont++;
+						auxIdCliente=buscarClientePorId(aCliente,cantClientes,aCont[i].idCliente);
+						printf("%12d | %15s | %15s | %20.2f\n",
+						aCliente[auxIdCliente].id,aCliente[auxIdCliente].cuit,aCliente[auxIdCliente].nombre,aCont[i].acum);
+					}
+				}
+				printf("\n\nCANTIDAD DE CLIENTES CON MENOS DE 100 KG: %d\n\n",cont);
+	}
+
+
+	return retorno;
+}
+
+int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int auxIdCliente;
+	int posCliente;
+	int flag=0;
+	int cont=0;
+	int posArray;
+	float min=0;
+	float sumaKgProcesados;
+
+	if(aCliente != NULL && cantClientes>0 &&
+		aPedido != NULL && cantPedidos>0 &&
+		aCont != NULL && cantContCliente>0)
+	{
+
+		for(i=0;i<cantContCliente;i++)
+				{
+					aCont[i].status = STATUS_EMPTY;
+					aCont[i].contPedidos = 0;
+					aCont[i].acum=0;
+				}
+				for(i=0;i<cantClientes;i++)
+				{
+					aCont[i].idCliente=aCliente[i].id;
+					for(j=0;j<cantPedidos;j++)
+					{
+						if((aPedido[j].status==STATUS_NOT_EMPTY)&&(aPedido[j].estado==ESTADO_COMPLETADO)&&(aCliente[i].id == aPedido[j].idCliente))
+						{
+							sumaKgProcesados=aPedido[j].cantKgHDPE+aPedido[j].cantKgLDPE+aPedido[j].cantKgPP;
+							aCont[i].contPedidos++;
+							aCont[i].acum=sumaKgProcesados + aCont[i].acum;
+							aCont[i].status=STATUS_NOT_EMPTY;
+							retorno=EXIT_SUCCESS;
+						}
+					}
+				}
+				if(retorno==EXIT_SUCCESS)
+				{
+					i=0;
+				}
+				printf("\n-----------------------------LISTA DE CLIENTES CON MAS 1000 KG RECICLADOS--------------------------------\n");
+				printf("%12s | %15s | %15s | %20s\n","ID CLIENTE", "CUIT","NOMBRE","CANT PLASTICO RECICLADO");
+				for(i=0;i<cantPedidos;i++)
+				{
+					if(aPedido[i].status==STATUS_NOT_EMPTY && aPedido[i].estado==ESTADO_COMPLETADO && aCont[i].status==STATUS_NOT_EMPTY && aCont[i].acum >= 1000 && aCont[i].contPedidos > 0)
+					{
+						cont++;
+						auxIdCliente=buscarClientePorId(aCliente,cantClientes,aCont[i].idCliente);
+						printf("%12d | %15s | %15s | %20.2f\n",
+						aCliente[auxIdCliente].id,aCliente[auxIdCliente].cuit,aCliente[auxIdCliente].nombre,aCont[i].acum);
+					}
+				}
+				posArray=buscarPedidoPorId(aPedido,cantPedidos,10);
+				printf("\n\nCANTIDAD DE CLIENTES CON MAS DE 1000 KG: %d Y POS ARRAY %d\n\n",cont,posArray);
+	}
+
+
+	return retorno;
+}
+
+int cantPedidosPendientesPorLocalidad(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente,char *localidad)
+{
+	int retorno = EXIT_ERROR;
+	int i;
+	int j;
+	int cont=0;
+
+	if(aCliente != NULL && cantClientes > 0 &&
+		aPedido != NULL && cantPedidos > 0 &&
+		aCont != NULL && cantContCliente > 0 &&
+		localidad !=NULL)
+	{
+		for(i=0;i<cantClientes;i++)
+		{
+			aCont[i].status = STATUS_EMPTY;
+			aCont[i].contPedidos = 0;
+			aCont[i].acum=0;
+		}
+		for(i=0;i<cantClientes;i++)
+		{
+			aCont[i].idCliente=aCliente[i].id;
+			for(j=0;j<cantPedidos;j++)
+			{
+				if((aPedido[j].status==STATUS_NOT_EMPTY)&&(aPedido[j].estado==ESTADO_PENDIENTE)&&(aCliente[i].id == aPedido[j].idCliente)&&(strncmp(aCliente[i].localidad,localidad,CANT_CARACTERES)==0))
+				{
+					cont++;
+					aCont[i].contPedidos++;
+					aCont[i].status=STATUS_NOT_EMPTY;
+					retorno=EXIT_SUCCESS;
+				}
+			}
+			retorno=EXIT_SUCCESS;
+		}
+		if(retorno == EXIT_SUCCESS && cont>0)
+		{
+			printf("\n\nLa cantidad de pedidos en %s es de %d\n",localidad,cont);
+		}
+		else if(retorno == EXIT_SUCCESS && cont==0)
+		{
+			printf("\n\nNo existe pedido pendiente con esa localidad\n");
+		}
+		else
+		{
+			printf("\n\nERROR!\n");
+		}
 	}
 	return retorno;
 }

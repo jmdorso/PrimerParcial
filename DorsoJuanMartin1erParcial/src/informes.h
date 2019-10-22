@@ -19,5 +19,10 @@ int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPe
 int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 int imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
 int imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente);
+int clienteConMasKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clienteConMenosKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clientesConMenosCienKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+int cantPedidosPendientesPorLocalidad(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente,char *localidad);
 
 #endif /* INFORMES_H_ */
