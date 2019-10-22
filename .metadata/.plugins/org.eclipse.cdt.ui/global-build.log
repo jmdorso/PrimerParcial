@@ -422,3 +422,700 @@ Finished building target: DorsoJuanMartin1erParcial
 00:58:55 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
 make all 
 make: Nothing to be done for 'all'.
+17:11:59 **** Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:236:8: error: too many arguments to function ‘clientePromKgPpReciclado’
+        clientePromKgPpReciclado(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES,"QUILMES");
+        ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:18:
+../src/informes.h:27:5: note: declared here
+ int clientePromKgPpReciclado(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:32: src/DorsoJuanMartin1erParcial.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:12:30 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:713:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:712:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:12:34 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:15:15 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:713:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:712:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:15:18 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:16:08 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:713:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:712:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:16:10 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:16:31 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:713:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:712:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:16:33 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:26:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/cliente.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/cliente.d" -MT"src/cliente.o" -o "src/cliente.o" "../src/cliente.c"
+Finished building: ../src/cliente.c
+ 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:26:35 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:47:43 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:52:51 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building file: ../src/pedidos.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/pedidos.d" -MT"src/pedidos.o" -o "src/pedidos.o" "../src/pedidos.c"
+Finished building: ../src/pedidos.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:52:54 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:56:26 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:56:28 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+17:59:24 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:40:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+17:59:26 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:01:29 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:01:31 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:02:17 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clienteConMasKgReciclados’:
+../src/informes.c:243:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c: In function ‘imprimirArrayPedidosStatusOkyCompletadosMasMilKg’:
+../src/informes.c:325:8: warning: unused variable ‘promedio’ [-Wunused-variable]
+  float promedio;
+        ^~~~~~~~
+../src/informes.c:323:6: warning: unused variable ‘cont’ [-Wunused-variable]
+  int cont;
+      ^~~~
+../src/informes.c: In function ‘clientesConMenosCienKgRecicladosVDos’:
+../src/informes.c:543:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:541:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:540:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:605:8: warning: unused variable ‘min’ [-Wunused-variable]
+  float min=0;
+        ^~~
+../src/informes.c:604:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+../src/informes.c:602:6: warning: unused variable ‘flag’ [-Wunused-variable]
+  int flag=0;
+      ^~~~
+../src/informes.c:601:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c: In function ‘clientePromKgPpReciclado’:
+../src/informes.c:712:6: warning: unused variable ‘posCliente’ [-Wunused-variable]
+  int posCliente;
+      ^~~~~~~~~~
+../src/informes.c:711:6: warning: unused variable ‘auxIdCliente’ [-Wunused-variable]
+  int auxIdCliente;
+      ^~~~~~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:03:59 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+../src/informes.c: In function ‘clientesConMasMilKgRecicladosVDos’:
+../src/informes.c:596:6: warning: unused variable ‘posArray’ [-Wunused-variable]
+  int posArray;
+      ^~~~~~~~
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:04:11 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:04:13 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:07:23 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:07:26 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:08:27 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:08:30 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+18:08:45 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/informes.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/informes.d" -MT"src/informes.o" -o "src/informes.o" "../src/informes.c"
+Finished building: ../src/informes.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+18:08:48 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.

@@ -42,9 +42,9 @@ int buscarClientePorId(sCliente *aArray, int cantidad,int id);
 int altaUnSoloClientePorUI(sCliente *cliente,sCliente *aArray,int cantidad);
 int imprimirArrayClientes(sCliente *aArray, int cantidad);
 int imprimirArrayClientesStatusOk(sCliente *aArray, int cantidad);
+
 int modificaClientePorId(sCliente *aArray,int cantidad,int id);
 void altaForzadaCliente(sCliente *aArray,int cantidad);
-int buscarClientePorCuit(sCliente *aArray,int cantidad,char *cuit);
 
 #endif /* CLIENTE_H_ */
 

@@ -24,7 +24,5 @@ int clienteConMenosKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido 
 int clientesConMenosCienKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
 int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
 int cantPedidosPendientesPorLocalidad(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente,char *localidad);
-int clientePromKgPpReciclado(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,auxContCliente *aCont,int cantContCliente);
-int kilosTotalesPorResiduosPorCuit(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,char *cuit,int residuo);
 
 #endif /* INFORMES_H_ */

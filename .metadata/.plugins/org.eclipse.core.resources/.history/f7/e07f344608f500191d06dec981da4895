@@ -210,32 +210,30 @@ int main(void)
 	    		imprimirArrayPedidosStatusOkyCompletados(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 9:
-	    		printf("\n\t\t||| A) Cliente con mas pedidos pendientes. |||\n");
+	    		printf("\nA) Cliente con mas pedidos pendientes.\n");
 	    		clienteConMasPedidosPendientes(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClientePendiente,CANT_CLIENTES);
-	    		printf("\n\t\t||| B) Cliente con mas pedidos completados. |||\n");
+	    		printf("\nB) Cliente con mas pedidos completados.\n");
 	    		clienteConMasPedidosCompletados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
-	    		printf("\n\t\t||| C) Cliente con mas pedidos totales. |||\n");
+	    		printf("\nC) Cliente con mas pedidos totales.\n");
 	    		clienteConMasPedidos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
-	    		printf("\n\t\t||| D) Cliente que reciclo mas kilos. |||\n");
+	    		printf("\nD) Cliente que reciclo mas kilos.\n");
 	    		//clienteConMasKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
 	    		clienteConMasKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
-	    		printf("\n\t\t||| E) Cliente que reciclo menos kilos. |||\n");
+	    		printf("\nE) Cliente que reciclo menos kilos.\n");
 	    		//clienteConMenosKgReciclados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS);
 	    		clienteConMenosKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
-	    		printf("\n\t\t||| F) Cantidad de Clientes que reciclaron mas de 1000 kilos. |||\n");
+	    		printf("\nF) Cantidad de Clientes que reciclaron mas de 1000 kilos\n");
 	    		clientesConMasMilKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
 	    		//imprimirArrayPedidosStatusOkyCompletadosMasMilKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
-	    		printf("\n\t\t||| G) Cantidad de Clientes que reciclaron menos de 100 kilos. |||\n");
+	    		printf("\nG) Cantidad de Clientes que reciclaron menos de 100 kilos\n");
 	    		//imprimirArrayPedidosStatusOkyCompletadosMenosCienKg(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		clientesConMenosCienKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
-	    		printf("\n\t\t||| H) Imprimir  pedidos completados indicando PORCENTAJE de plastico reciclado. |||\n");
+	    		printf("\nH) Imprimir  pedidos completados indicando PORCENTAJE de plastico reciclado.\n");
 	    		imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
-	    		printf("\n\t\t||| I) Ingresar una localidad e indicar cant. pedidos pendientes. |||\n");
+	    		printf("\nI) Ingresar una localidad e indicar cant. pedidos pendientes. \n");
 	    		cantPedidosPendientesPorLocalidad(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES,"QUILMES");
-	    		printf("\n\t\t||| J) Promedio de kilos de polipropileno reciclado en promedio por cliente. |||\n");
-	    		clientePromKgPpReciclado(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
-	    		printf("\n\t\t||| K) Obtener KG totales de un determinado tipo a traves del cuit. |||\n");
-	    		kilosTotalesPorResiduosPorCuit(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,"30112233445",KG_LDPE);
+	    		printf("\nJ) Promedio de kilos de polipropileno reciclado en promedio por cliente. \n");
+	    		clientePromKgPpReciclado(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES,"QUILMES");
 	    		break;
 	    	case 10:
 				getChar(&salir,

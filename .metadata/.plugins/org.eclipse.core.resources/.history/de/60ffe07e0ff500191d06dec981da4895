@@ -593,6 +593,7 @@ int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedid
 	int j;
 	int auxIdCliente;
 	int cont=0;
+	int posArray;
 	float sumaKgProcesados;
 
 	if(aCliente != NULL && cantClientes>0 &&

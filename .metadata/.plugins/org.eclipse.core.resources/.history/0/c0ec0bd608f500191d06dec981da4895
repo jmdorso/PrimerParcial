@@ -240,6 +240,7 @@ int clienteConMasKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPedi
 	int i;
 	int auxIdCliente;
 	int posCliente;
+	int flag=0;
 	float sumaReciclados;
 	float max=0;;
 
@@ -319,7 +320,9 @@ int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPe
 int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
 {
 	int i;
+	int cont;
 	int auxId;
+	float promedio;
 	float sumaKgProcesados;
 	int retorno = EXIT_ERROR;
 	char estadoPedido[2][25] = {"Completado","Pendiente"};
@@ -534,7 +537,10 @@ int clientesConMenosCienKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPe
 	int i;
 	int j;
 	int auxIdCliente;
+	int posCliente;
+	int flag=0;
 	int cont=0;
+	float min=0;
 	float sumaKgProcesados;
 
 	if(aCliente != NULL && cantClientes>0 &&
@@ -592,7 +598,11 @@ int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedid
 	int i;
 	int j;
 	int auxIdCliente;
+	int posCliente;
+	int flag=0;
 	int cont=0;
+	int posArray;
+	float min=0;
 	float sumaKgProcesados;
 
 	if(aCliente != NULL && cantClientes>0 &&
@@ -637,7 +647,8 @@ int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedid
 						aCliente[auxIdCliente].id,aCliente[auxIdCliente].cuit,aCliente[auxIdCliente].nombre,aCont[i].acum);
 					}
 				}
-				printf("\n\nCANTIDAD DE CLIENTES CON MAS DE 1000 KG: %d\n\n",cont);
+				posArray=buscarPedidoPorId(aPedido,cantPedidos,10);
+				printf("\n\nCANTIDAD DE CLIENTES CON MAS DE 1000 KG: %d Y POS ARRAY %d\n\n",cont,posArray);
 	}
 
 
@@ -698,7 +709,9 @@ int clientePromKgPpReciclado(sCliente *aCliente,int cantClientes,sPedido *aPedid
 	int retorno = EXIT_ERROR;
 	int i;
 	int j;
-	int cont=0;
+	int auxIdCliente;
+	int posCliente;
+	int cont;
 	float cantKgPp=0;
 	float promedio=0;
 
@@ -738,63 +751,12 @@ int clientePromKgPpReciclado(sCliente *aCliente,int cantClientes,sPedido *aPedid
 						}
 					}
 					promedio = cantKgPp/cont;
-					printf("\n\nLa cantidad de KG de PP reciclados por cliente es de: %.2f [cantKgPP %.2f CantClientesPedidoCompleto %d]\n",promedio,cantKgPp,cont);
+					printf("\n\nLa cantidad de KG de PP reciclados por cliente es de: %.2f CANTPP %.2f CONT %d\n",promedio,cantKgPp,cont);
 				}
 
 
 	}
-	return retorno;
-}
 
-int kilosTotalesPorResiduosPorCuit(sCliente *aCliente,int cantClientes,sPedido *aPedido,int cantPedidos,char *cuit,int residuo)
-{
-	int retorno = EXIT_ERROR;
-	int i;
-	int posArray;
-	int auxId;
-	int flagEntra=0;
-	float kgTotales=0;
-	char tipoResiduo[3][25] = {"HDPE","LDPE","PP"};
 
-	if(aCliente != NULL && cantClientes > 0 &&
-		aPedido != NULL && cantPedidos > 0 &&
-		cuit != NULL && residuo >= 1 && residuo <= 3)
-	{
-		posArray=buscarClientePorCuit(aCliente,cantClientes,cuit);
-		if(posArray >= 0)
-		{
-			auxId=aCliente[posArray].id;
-		}
-		else
-		{
-			printf("\n\nNo existe cliente con ese CUIT\n\n");
-			flagEntra = -1;
-		}
-		if(flagEntra != -1)
-		{
-			for(i=0;i<cantPedidos;i++)
-			{
-				if(aPedido[i].status==STATUS_NOT_EMPTY && aPedido[i].estado==ESTADO_COMPLETADO && aPedido[i].idCliente==auxId)
-				{
-					switch(residuo)
-					{
-					case 1:
-						kgTotales=aPedido[i].cantKgHDPE+kgTotales;
-						retorno=EXIT_SUCCESS;
-						break;
-					case 2:
-						kgTotales=aPedido[i].cantKgLDPE+kgTotales;
-						retorno=EXIT_SUCCESS;
-						break;
-					case 3:
-						kgTotales=aPedido[i].cantKgPP+kgTotales;
-						retorno=EXIT_SUCCESS;
-						break;
-					}
-				}
-			}
-			printf("\n\nLa cantidad total de residuos del tipo %s del cliente %s con CUIT %s es de: %.2f Kg.\n\n",tipoResiduo[residuo-1],aCliente[posArray].nombre,cuit,kgTotales);
-		}
-	}
 	return retorno;
 }

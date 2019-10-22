@@ -240,6 +240,7 @@ int clienteConMasKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPedi
 	int i;
 	int auxIdCliente;
 	int posCliente;
+	int flag=0;
 	float sumaReciclados;
 	float max=0;;
 
@@ -319,7 +320,9 @@ int clienteConMenosKgReciclados(sCliente *aCliente,int cantClientes,sPedido *aPe
 int imprimirArrayPedidosStatusOkyCompletadosMasMilKg(sPedido *aArray, int cantidad,sCliente *aCliente, int cantCliente)
 {
 	int i;
+	int cont;
 	int auxId;
+	float promedio;
 	float sumaKgProcesados;
 	int retorno = EXIT_ERROR;
 	char estadoPedido[2][25] = {"Completado","Pendiente"};
@@ -534,7 +537,10 @@ int clientesConMenosCienKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPe
 	int i;
 	int j;
 	int auxIdCliente;
+	int posCliente;
+	int flag=0;
 	int cont=0;
+	float min=0;
 	float sumaKgProcesados;
 
 	if(aCliente != NULL && cantClientes>0 &&
@@ -592,7 +598,11 @@ int clientesConMasMilKgRecicladosVDos(sCliente *aCliente,int cantClientes,sPedid
 	int i;
 	int j;
 	int auxIdCliente;
+	int posCliente;
+	int flag=0;
 	int cont=0;
+	int posArray;
+	float min=0;
 	float sumaKgProcesados;
 
 	if(aCliente != NULL && cantClientes>0 &&
@@ -698,6 +708,8 @@ int clientePromKgPpReciclado(sCliente *aCliente,int cantClientes,sPedido *aPedid
 	int retorno = EXIT_ERROR;
 	int i;
 	int j;
+	int auxIdCliente;
+	int posCliente;
 	int cont=0;
 	float cantKgPp=0;
 	float promedio=0;

@@ -225,7 +225,7 @@ int imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(sPedido *aArray,
 			{
 				auxId = buscarClientePorId(aCliente,cantCliente,aArray[i].idCliente);
 				sumaKgProcesados=aArray[i].cantKgHDPE+aArray[i].cantKgLDPE+aArray[i].cantKgPP;
-				promedio=(sumaKgProcesados*100)/aArray[i].cantKg;
+				promedio=(sumaKgProcesados)/(aArray[i].cantKg*100);
 				printf("%12d | %15s | %20.2f | %15s \n",
 						aArray[i].id,aCliente[auxId].cuit,promedio,estadoPedido[aArray[i].estado-1]);
 			}

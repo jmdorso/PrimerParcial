@@ -16,9 +16,6 @@
 #define CANT_MAX_KG 10000
 #define ESTADO_COMPLETADO 1
 #define ESTADO_PENDIENTE 2
-#define KG_HDPE 1
-#define KG_LDPE 2
-#define KG_PP 3
 
 #include "utn.h"
 #include "cliente.h"

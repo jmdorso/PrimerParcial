@@ -342,7 +342,7 @@ void altaForzadaCliente(sCliente *aArray,int cantidad)
 {
 	sCliente aux[6];
 	char nombre[][CANT_CARACTERES] = {"TELEFONICA","DATASOFT","NESTLE","TERRABUSI","DIA","QUILMES"};
-	char cuit[][CANT_CARACTERES_CUIT] = {"30112233445","30445566776","30889955219","30567814235","31545812533","30514857596"};
+	char cuit[][CANT_CARACTERES_CUIT] = {"30-11223344-5","30-44556677-6","30-88995521-9","30-56781423-5","31-54581253-3","30-51485759-6"};
 	char direccion[][CANT_CARACTERES] = {"Lima 1234","Corrientes 2547","Cucha cucha 555","Rocha 784","Mitre 750","Rocha 741"};
 	char localidad[][CANT_CARACTERES]= {"CABA","CABA","LANUS","QUILMES","AVELLANEDA","QUILMES"};
 	int i;
@@ -357,21 +357,7 @@ void altaForzadaCliente(sCliente *aArray,int cantidad)
 	}
 }
 
-int buscarClientePorCuit(sCliente *aArray,int cantidad,char *cuit)
-{
-	int retorno = EXIT_ERROR;
-	int i;
 
-	if(aArray != NULL && cantidad > 0 && cuit != NULL)
-	{
-		for(i=0;i<cantidad;i++)
-		{
-			if(aArray[i].status==STATUS_NOT_EMPTY && strncmp(cuit,aArray[i].cuit,CANT_CARACTERES_CUIT)==0)
-			{
-				retorno = i;
-				break;
-			}
-		}
-	}
-	return retorno;
-}
+
+
+
