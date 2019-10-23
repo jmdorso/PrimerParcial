@@ -15,6 +15,7 @@
 #include "utn.h"
 #include "cliente.h"
 #include "pedidos.h"
+#include "informes.h"
 
 #define ALTA_OK 1
 #define ALTA_DNS 0
@@ -25,6 +26,7 @@ int main(void)
 	char salir;
 	char confirmarBaja;
 	char confirmarModif;
+	char opcionInformar;
 	sCliente unClienteAlta;
 	sCliente unClienteBaja;
 	sCliente unClienteModif;
@@ -32,7 +34,9 @@ int main(void)
 	sPedido unPedidoAlta;
 	sPedido unPedidoModif;
 	sPedido aPedidos[CANT_PEDIDOS];
-	auxContCliente aContCliente[CANT_CLIENTES];
+	auxContCliente aContClientePendiente[CANT_CLIENTES];
+	auxContCliente aContClienteCompletado[CANT_CLIENTES];
+	auxContCliente aContClienteTotal[CANT_CLIENTES];
 	int opcion;
 	int flagAltaPedido=ALTA_DNS;
 	int auxId;
@@ -72,7 +76,7 @@ int main(void)
 					{
 	    				contClientes++;
 	    				printf("\n\nSe ingreso el cliente con ID: # %d\n\n",auxId);
-					}
+	    			}
 				}
 	    		break;
 	    	case 2:
@@ -160,25 +164,19 @@ int main(void)
 				{
 					if(altaPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoAlta)==EXIT_SUCCESS)
 					{
-	    				flagAltaPedido=ALTA_OK;
 	    				printf("\n\nSe ingreso correctamente el pedido\n\n");
 					}
 				}
 	    		break;
 	    	case 5:
-				if(flagAltaPedido == ALTA_DNS)
-				{
-					printf("\nERROR. Falta ingresar al menos un pedido.\n\n");
-					break;
-				}
 				imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
-				getValidIntFromString(&auxId,"\nIngrese el ID: ","\nError\n",1,CANT_PEDIDOS,CANT_REINTENTOS);
+				getValidIntFromString(&auxId,"\nIngrese el ID del Pedido: ","\nError\n",1,CANT_PEDIDOS,CANT_REINTENTOS);
 				unPedidoModif.id = auxId;
 				auxId = buscarPedidoPorId(aPedidos,CANT_PEDIDOS,unPedidoModif.id);
 				if(aPedidos[auxId].status== STATUS_NOT_EMPTY)
 				{
-					printf("Quiere Modificar el siguiente Pedido: \n");
-					printf("ID: %d",aPedidos[auxId].id);
+					printf("\nQuiere Modificar el siguiente Pedido: \n");
+					printf("ID del Pedido: %d\nCANT KG: %.2f\nID del cliente: %d\n",aPedidos[auxId].id,aPedidos[auxId].cantKg,aPedidos[auxId].idCliente);
 					getChar(&confirmarModif,
 							"\nSeguro desea modificar? Ingrese s (o cualquier tecla para cancelar modificacion): ",
 							"\nERROR. Verifique si ingreso una letra y/o desactive mayuscula\n",
@@ -204,7 +202,7 @@ int main(void)
 	    		imprimirArrayPedidosStatusOk(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 6:
-	    		contadorDePedidosPendientePorCliente(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContCliente,CANT_CLIENTES);
+	    		contadorDePedidosPendientePorCliente(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClientePendiente,CANT_CLIENTES);
 	    		break;
 	    	case 7:
 	    		imprimirArrayPedidosStatusOkyPendientes(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
@@ -213,7 +211,61 @@ int main(void)
 	    		imprimirArrayPedidosStatusOkyCompletados(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
 	    		break;
 	    	case 9:
-	    		clienteConMasPedidosPendientes(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContCliente,CANT_CLIENTES);
+	    		printf("\n\t\t||| A) Cliente con mas pedidos pendientes. |||\n");
+	    		printf("\n\t\t||| B) Cliente con mas pedidos completados. |||\n");
+	    		printf("\n\t\t||| C) Cliente con mas pedidos totales. |||\n");
+	    		printf("\n\t\t||| D) Cliente que reciclo mas kilos. |||\n");
+	    		printf("\n\t\t||| E) Cliente que reciclo menos kilos. |||\n");
+	    		printf("\n\t\t||| F) Cantidad de Clientes que reciclaron mas de 1000 kilos. |||\n");
+	    		printf("\n\t\t||| G) Cantidad de Clientes que reciclaron menos de 100 kilos. |||\n");
+	    		printf("\n\t\t||| H) Imprimir  pedidos completados indicando PORCENTAJE de plastico reciclado. |||\n");
+	    		printf("\n\t\t||| I) Ingresar una localidad e indicar cant. pedidos pendientes. |||\n");
+	    		printf("\n\t\t||| J) Promedio de kilos de polipropileno reciclado en promedio por cliente. |||\n");
+	    		printf("\n\t\t||| K) Obtener KG totales de un determinado tipo a traves del cuit. |||\n");
+	    		printf("\n\t\t||| L) Volver atras. |||\n");
+	    		if(getChar(opcionInformar,"\nIngrese opcion(mayusculas): ","\nError!\n",'A','K',CANT_REINTENTOS)==0)
+	    		{
+	    			switch(opcionInformar)
+	    			{
+	    			case 'A':
+	    	    		clienteConMasPedidosPendientes(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClientePendiente,CANT_CLIENTES);
+	    				break;
+	    			case 'B':
+	    	    		clienteConMasPedidosCompletados(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
+	    				break;
+	    			case 'C':
+	    	    		clienteConMasPedidos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
+	    				break;
+	    			case 'D':
+	    	    		clienteConMasKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
+	    				break;
+	    			case 'E':
+	    	    		clienteConMenosKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
+	    				break;
+	    			case 'F':
+	    	    		clientesConMasMilKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteTotal,CANT_CLIENTES);
+	    				break;
+	    			case 'G':
+	    	    		clientesConMenosCienKgRecicladosVDos(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
+	    				break;
+	    			case 'H':
+	    	    		imprimirArrayPedidosStatusOkyCompletadosPorcentajeReciclado(aPedidos,CANT_PEDIDOS,aClientes,CANT_CLIENTES);
+	    				break;
+	    			case 'I':
+	    	    		cantPedidosPendientesPorLocalidad(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES,"QUILMES");
+	    				break;
+	    			case 'J':
+	    	    		clientePromKgPpReciclado(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,aContClienteCompletado,CANT_CLIENTES);
+	    				break;
+	    			case 'K':
+  			    		kilosTotalesPorResiduosPorCuit(aClientes,CANT_CLIENTES,aPedidos,CANT_PEDIDOS,"30112233445",KG_LDPE);
+	    				break;
+	    			case 'L':
+	    				break;
+	    			}
+	    		}
+	    		printf(\n);
+	    		break;
 	    	case 10:
 				getChar(&salir,
 						"\nSeguro desea salir? Ingrese s (o cualquier tecla para continuar en el programa): ",

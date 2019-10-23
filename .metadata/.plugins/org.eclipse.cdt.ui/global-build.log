@@ -1119,3 +1119,101 @@ Finished building target: DorsoJuanMartin1erParcial
 18:08:48 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
 make all 
 make: Nothing to be done for 'all'.
+19:09:56 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:226:19: warning: passing argument 1 of ‘getChar’ makes pointer from integer without a cast [-Wint-conversion]
+        if(getChar(opcionInformar,"\nIngrese opcion(mayusculas): ","\nError!\n",'A','K',CANT_REINTENTOS)==0)
+                   ^~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:15:
+../src/utn.h:34:20: note: expected ‘char *’ but argument is of type ‘char’
+ int getChar( char *pResultado,
+              ~~~~~~^~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:267:15: error: stray ‘\’ in program
+        printf(\n);
+               ^
+../src/DorsoJuanMartin1erParcial.c:267:16: error: ‘n’ undeclared (first use in this function)
+        printf(\n);
+                ^
+../src/DorsoJuanMartin1erParcial.c:267:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/DorsoJuanMartin1erParcial.c:41:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:32: src/DorsoJuanMartin1erParcial.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:10:13 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:226:19: warning: passing argument 1 of ‘getChar’ makes pointer from integer without a cast [-Wint-conversion]
+        if(getChar(opcionInformar,"\nIngrese opcion(mayusculas): ","\nError!\n",'A','K',CANT_REINTENTOS)==0)
+                   ^~~~~~~~~~~~~~
+In file included from ../src/DorsoJuanMartin1erParcial.c:15:
+../src/utn.h:34:20: note: expected ‘char *’ but argument is of type ‘char’
+ int getChar( char *pResultado,
+              ~~~~~~^~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:41:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+../src/DorsoJuanMartin1erParcial.c:226:11: warning: ‘opcionInformar’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        if(getChar(opcionInformar,"\nIngrese opcion(mayusculas): ","\nError!\n",'A','K',CANT_REINTENTOS)==0)
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:10:26 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+19:10:29 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+19:11:39 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:41:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:11:45 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+19:11:49 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
+19:17:13 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+Building file: ../src/DorsoJuanMartin1erParcial.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DorsoJuanMartin1erParcial.d" -MT"src/DorsoJuanMartin1erParcial.o" -o "src/DorsoJuanMartin1erParcial.o" "../src/DorsoJuanMartin1erParcial.c"
+../src/DorsoJuanMartin1erParcial.c: In function ‘main’:
+../src/DorsoJuanMartin1erParcial.c:41:6: warning: unused variable ‘flagAltaPedido’ [-Wunused-variable]
+  int flagAltaPedido=ALTA_DNS;
+      ^~~~~~~~~~~~~~
+Finished building: ../src/DorsoJuanMartin1erParcial.c
+ 
+Building target: DorsoJuanMartin1erParcial
+Invoking: GCC C Linker
+gcc  -o "DorsoJuanMartin1erParcial"  ./src/DorsoJuanMartin1erParcial.o ./src/cliente.o ./src/informes.o ./src/pedidos.o ./src/utn.o   
+Finished building target: DorsoJuanMartin1erParcial
+ 
+19:58:34 **** Incremental Build of configuration Debug for project DorsoJuanMartin1erParcial ****
+make all 
+make: Nothing to be done for 'all'.
